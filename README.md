@@ -1,16 +1,19 @@
-## Timbertrack
+# Timbertrack
 
 Database management software made for Timbertrack.
 
 -- Run the following commands before you start the project
 
-```bash
+## bash
+
+```
     git pull
     php artisan migrate:rollback
     php artisan migrate
+
 ```
 
--- Run the following commands before after cloning the project
+## Run the following commands before after cloning the project
 
 ```bash
 git clone https://github.com/barsi-dev/timbertrack

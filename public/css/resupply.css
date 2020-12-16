@@ -1,0 +1,172 @@
+#resupply{
+  background-color:  rgba(255, 255, 255, .1);
+  border-left: 3px solid white;
+}
+
+#container3{
+    position: absolute;
+    background-color: rgba(255, 255, 255, .34);
+    color: black;
+    height: 2000px;
+    width: 90%;
+    margin-top: 10%;
+    margin-left: 5%;
+    text-align: center;
+    overflow-y:auto
+}
+.plus{
+  position: fixed;
+  border:1px solid black;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  top: 94%;
+  left: 22%;
+  z-index:5;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s ease;
+}
+.slider{
+  position: absolute;
+  top: 0;
+  left: 0px;
+  width: 0px;
+  height: 50px;
+  background: rgba(0,0,0,0.8);
+  border-radius: 50px;
+  transition: all 0.5s 0.3s ease;
+  z-index:4;
+}
+.plus:hover .slider {
+    width: 1000px;
+    transition: all 0.5s ease;
+  }
+
+
+
+  .plus:hover  {
+    background-color: rgba(0,0,0,0.8);
+    transition: all 0.5s ease;
+  }
+  .plus .fa fa-plus:hover  {
+    color: rgba(255,255,255,0.8);
+    transition: all 0.5s ease;
+  }
+
+/*search*/
+.search__input {
+  margin-top: 3%;
+  margin-left: 13%;
+  width: 70%;
+  padding: 12px 24px;
+  background-color: transparent;
+  transition: transform 250ms ease-in-out;
+  font-size: 14px;
+  line-height: 18px;
+  color: black;
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  background-position: 95% center;
+  border-radius: 50px;
+  border: 1px solid #575756;
+  transition: all 250ms ease-in-out;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.search__input::placeholder {
+  color: rgba(87, 87, 86, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.search__input:hover,
+.search__input:focus {
+  padding: 12px 0;
+  outline: 0;
+  border: 1px solid transparent;
+  border-bottom: 1px solid #575756;
+  border-radius: 0;
+  background-position: 100% center;
+}
+/*categories*/
+#categories{
+  position: absolute;
+  width:65%;
+  height:5%;
+  margin-top: 4%;
+  margin-left:10%
+
+}
+
+#categories a{
+  margin-right: 50px;
+  text-decoration: none;
+  font-size: 23px;
+  color: white;
+}
+
+
+a span {
+  transition: all 0.5s;
+  border-bottom: 1px solid;
+  font-weight: 700;
+  color: black;
+}
+ a span:nth-child(2) {
+  transition-delay: 0.1s;
+}
+a  span:nth-child(3) {
+  transition-delay: 0.2s;
+}
+a  span:nth-child(4) {
+  transition-delay: 0.3s;
+}
+a span:nth-child(8) {
+  transition-delay: 0.7s;
+}
+a span:nth-child(7) {
+  transition-delay: 0.6s;
+}
+a span:nth-child(6) {
+  transition-delay: 0.5s;
+}
+a span:nth-child(5) {
+  transition-delay: 0.4s;
+}
+ a :hover span {
+  font-weight: 1000;
+
+}
+a :hover span:nth-child(8) {
+  transition-delay: 0.7s;
+}
+a :hover span:nth-child(7) {
+  transition-delay: 0.6s;
+}
+a :hover span:nth-child(6) {
+  transition-delay: 0.5s;
+}
+a :hover span:nth-child(5) {
+  transition-delay: 0.4s;
+}
+ a:hover span:nth-child(4) {
+  transition-delay: 0.3s;
+}
+a :hover span:nth-child(3) {
+  transition-delay: 0.2s;
+}
+a :hover span:nth-child(2) {
+  transition-delay: 0.1s;
+}
+a :hover span:nth-child(1) {
+  transition-delay: 0s;
+}
+a.hover-shadow:hover {
+  text-shadow: 1px 1px 0px gray, 2px 2px 0px gray, 3px 3px 0px gray;
+}
+a.hover-color:hover {
+  border-color: darkmagenta;
+}

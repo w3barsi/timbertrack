@@ -15,4 +15,5 @@ git clone https://github.com/barsi-dev/timbertrack
 composer install
 php artisan key:generate
 php artisan serve
+test
 ```

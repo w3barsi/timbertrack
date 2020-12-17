@@ -26,7 +26,7 @@
                     <td><center>adrresdsds</center></td>
                     <td><center>product</center></td>
                     <td><center>23</center></td>
-                    <td><center>PHP price*quatitiy</center></td>';
+                    <td><center>PHP price*quatitiy</center></td>
                     <td>
                         <select style="">
                             <option disabled selected hidden>ONGOING</option>

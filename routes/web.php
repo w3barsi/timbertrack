@@ -62,6 +62,9 @@ Route::get('/Dashboard', function () {
     return view('Official-Content/Dashboard');
 });
 
+Route::get('/Registered', function () {
+    return view('Official-Content/Registered');
+});
 
 
 Route::get('/About', function () {

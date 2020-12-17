@@ -123,9 +123,7 @@ a :hover span:nth-child(1) {
 a.hover-shadow:hover {
     text-shadow: 1px 1px 0px gray, 2px 2px 0px gray, 3px 3px 0px gray;
 }
-a.hover-color:hover {
-    border-color: darkmagenta;
-}
+
 
 /*button */
 
@@ -512,8 +510,9 @@ tr:hover {
     margin-top: -0.7%;
 }
 
+
 .selected {
-    background-color: white;
+    background-color: transa;
     padding: 10px;
     border-radius: 25px;
     border: 2px solid black;

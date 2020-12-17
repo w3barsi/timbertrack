@@ -1,21 +1,15 @@
-#resupply{
-    background-color:  rgba(255, 255, 255, .1);
-    border-left: 3px solid white;
-  }
+#container3{
+    position: absolute;
+    background-color: rgba(255, 255, 255, .34);
+    color: black;
+    height: auto;
+    width: 90%;
+    margin-top: 10%;
+    margin-left: 5%;
+    text-align: center;
+}
 
-  #container3{
-      position: absolute;
-      background-color: rgba(255, 255, 255, .34);
-      color: black;
-      height: 2000px;
-      width: 90%;
-      margin-top: 10%;
-      margin-left: 5%;
-      text-align: center;
-      overflow-y:auto
-  }
-  /*search*/
-  .search__input {
+.search__input {
     margin-top: 3%;
     margin-left: 13%;
     width: 70%;
@@ -37,7 +31,7 @@
     transform-style: preserve-3d;
   }
 
-  .search__input::placeholder {
+.search__input::placeholder {
     color: rgba(87, 87, 86, 0.8);
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -52,14 +46,13 @@
     border-radius: 0;
     background-position: 100% center;
   }
-  /*categories*/
-  #categories{
+/*categories*/
+#categories{
     position: absolute;
     width:65%;
     height:5%;
     margin-top: 4%;
-    margin-left:10%
-
+    margin-left:18%;
   }
 
   #categories a{
@@ -85,6 +78,9 @@
   a  span:nth-child(4) {
     transition-delay: 0.3s;
   }
+  a span:nth-child(9) {
+    transition-delay: 0.8s;
+  }
   a span:nth-child(8) {
     transition-delay: 0.7s;
   }
@@ -100,6 +96,9 @@
    a :hover span {
     font-weight: 1000;
 
+  }
+  a :hover span:nth-child(9) {
+    transition-delay: 0.8s;
   }
   a :hover span:nth-child(8) {
     transition-delay: 0.7s;
@@ -133,68 +132,46 @@
   }
   table {
 
-      width: 100%;
-      border-collapse: collapse;
-      border: 1px solid black;
-      font-size: 24px;
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid black;
+    font-size: 24px;
 
-      }
-      ::-webkit-scrollbar {
-        width: 12px;
-      }
-
-      /* Track */
-      ::-webkit-scrollbar-track {
-        border-radius: 10px;
-      }
-
-      /* Handle */
-      ::-webkit-scrollbar-thumb {
-        -webkit-border-radius: 10px;
-        border-radius: 10px;
-        background: rgba(128,128,128,0.4);
-        -webkit-shadow: inset 0 0 6px rgba(0,0,0,0.5);
-      }
-      ::-webkit-scrollbar-thumb:window-inactive {
-        background: rgba(0,0,0,0.4);
-      }
-
-      td{
-        flex: 1 1 20%;
-        text-align: center;
-        padding-top: 6px;
-        padding-bottom: 6px;
-      }
-      th{
-        padding-top: 12px;
-        padding-bottom: 12px;
-        text-align: middle;
-        background-color: rgba(0, 0, 0, 0.9);
-        color: rgba(255,255,255, .9);
-
-      }
-
-      tr:nth-child(even){background-color: rgba(0, 0, 0, 0.15);}
-      tr:hover {background-color: rgba(0, 0, 0, 0.2);}
-
-
-      .updating {
-        display: inline-block;
-        border: none;
-        padding: 0;
-        width: 10.5ch;
-        background: repeating-linear-gradient(
-                90deg,
-                dimgrey 0,
-                dimgrey 1ch,
-                transparent 0,
-                transparent 1.5ch
-            )
-            0 100%/ 6ch 2px no-repeat;
-        font: 2ch droid sans mono, consolas, monospace;
-        letter-spacing: 0.5ch;
+    }
+    ::-webkit-scrollbar {
+      width: 12px;
     }
 
-    .updating:focus {
-        outline: none;
+    /* Track */
+    ::-webkit-scrollbar-track {
+      border-radius: 10px;
     }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      background: rgba(128,128,128,0.4);
+      -webkit-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    }
+    ::-webkit-scrollbar-thumb:window-inactive {
+      background: rgba(0,0,0,0.4);
+    }
+
+    td{
+      flex: 1 1 20%;
+      text-align: center;
+      padding-top: 6px;
+      padding-bottom: 6px;
+    }
+    th{
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: middle;
+      background-color: rgba(0, 0, 0, 0.9);
+      color: rgba(255,255,255, .9);
+
+    }
+
+    tr:nth-child(even){background-color: rgba(0, 0, 0, 0.15);}
+    tr:hover {background-color: rgba(0, 0, 0, 0.2);}

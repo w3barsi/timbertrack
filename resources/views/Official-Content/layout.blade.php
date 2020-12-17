@@ -119,13 +119,133 @@
 
 
     </div>
-
     <div id="container">
         @yield('body')
     </div>
 
-    @yield('script')
+    <div id="editback">
+        <div id="edited" style="position:absolute">
+            <span class='editclose'>&times;</span>
+                <div class="column left" style="background-color:#F5F5F5">
+                <center>
 
+                    <h2 style="color:black">Edit Profile</h2><br>
+
+                    <form action="" method='POST' enctype="multipart/form-data">
+
+                    <img src="{{ asset('img/img_avatar.png') }}" id="img21" alt="Avatar"><br>
+                    <input type="file"  name="file" id="imgInp" style="display:none; cursor:pointer; position:absolute; z-index:20; margin-top:6%; margin-left: -5%; "/>
+                    <label for="imgInp"> <i style="width:29%; font-style: normal;  position:absolute; margin-top:5%; margin-left:-15%; background-color: #006666;"
+                    class="button button4" >Upload new photo </i> </label>
+                </center>
+            </div>
+            <div class="column middle" style="background-color:#F5F5F5">
+                <h2>&nbsp;</h2>
+
+                    <p style=" margin-bottom: auto; color:black">First Name</p>
+                    <input type="text" name="first_name" value="">
+
+                    <p style=" margin-bottom: auto; color:black">Password</p>
+                    <input type="password" id="password" value="" name="password" onchange='check_pass();' required>
+
+                    <p style=" margin-bottom: auto; color:black">Username</p>
+                    <input type="text" name="user" value="">
+
+                    <p style=" margin-bottom: auto; color:black">Email Address</p>
+                    <input type="email" name="email" value="">
+
+            </div>
+            <div class="column right" style="background-color:#F5F5F5;">
+                <h2>&nbsp;</h2>
+                <p style=" margin-bottom: auto;color:black">Last Name</p>
+                <input type="text" name="last_name" value="">
+
+                <p style=" margin-bottom: auto; color:black">Confirm Password</p>
+                <input type="password" id="confirm_password" name="confirm" onchange='check_pass();' value="" required>
+                <span id='message'></span>
+
+                <p style=" margin-bottom: auto; color:black">Mobile</p>
+                <input type="number" name="mobile" value="">
+                <center><br>
+                <input type="hidden" name="id" value="">
+                <input type="submit" style="width:30%; position:absolute; margin-top:1%; margin-left:-20%; background-color: #006666;"
+                class="button button5" id= "Edit_Profile" name="Edit_Profile" value="Update">
+                </center>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    @yield('script')
+    <script>
+        function edit() {
+            var y = document.getElementById("editback");
+            if (y.style.display === "none") {
+                y.style.display = "block";
+            } else {
+                y.style.display = "none";
+            }
+        }
+
+            var editback = document.getElementById('editback');
+            var editclose = document.getElementsByClassName("editclose")[0];
+            editclose.onclick = function() {
+                editback.style.display = "none";
+            }
+            window.onclick = function(event) {
+                if (event.target == editback) {
+                    editback.style.display = "none";
+                }
+            }
+
+        function check_pass() {
+            if (document.getElementById('password').value ==
+                    document.getElementById('confirm_password').value) {
+                document.getElementById('Edit_Profile').disabled = false;
+                document.getElementById('message').innerHTML = '<i class="fa fa-check" style="font-size:15px;color:green"></i>';
+            } else {
+                document.getElementById('Edit_Profile').disabled = true;
+                document.getElementById('message').innerHTML = '<i class="fa fa-close" style="font-size:15px;color:red"></i>';
+
+            }
+        }
+
+        function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#img21').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#imgInp").change(function(){
+        readURL(this);
+    });
+
+
+        function HideShowRegister() {
+                var x = document.getElementById("registerback");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            }
+            var registerBack = document.getElementById('registerback');
+            var registerExit = document.getElementsByClassName("registerclose")[0];
+            registerExit.onclick = function() {
+                registerBack.style.display = "none";
+            }
+            window.onclick = function(event) {
+                if (event.target == registerBack) {
+                    registerBack.style.display = "none";
+                }
+            }
+    </script>
     @livewireScripts
 </body>
 

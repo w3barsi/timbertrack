@@ -291,6 +291,12 @@ body{
     width:100%;
 
 }
+#img21 {
+    border-radius: 50%;
+    max-width: 50%;
+    height: auto;
+  }
+
 
 #submitprof{
     font-family: 'Scope One';
@@ -388,3 +394,104 @@ body{
       border-radius: 12px;
 
   }
+
+
+  .register {
+    width: 600px;
+    background-color: #ffffff;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+    margin: 200px auto;
+    }
+    .register h1 {
+
+    text-align: center;
+    color: #5b6574;
+    font-size: 24px;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #dee0e4;
+    }
+    .register form {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+    }
+
+    .register select{
+        width: 410px;
+        height: 50px;
+        border: 1px solid #dee0e4;
+        margin-bottom: 20px;
+        padding: 0 15px;
+        }
+        .register form input[type="submit"] {
+        width: 100%;
+        padding: 15px;
+        margin-top: 20px;
+        background-color: gray;
+        border: 0;
+        cursor: pointer;
+        font-weight: bold;
+        color: #ffffff;
+        transition: background-color 0.2s;
+        }
+        .register form input[type="submit"]:hover {
+        background-color: black;
+        transition: background-color 0.2s;
+        }
+
+        #registerback{
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 100;
+
+          }
+
+          .registerclose:hover,
+          .registerclose:focus {
+          color: #000;
+          text-decoration: none;
+          cursor: pointer;
+          }
+
+          .registerclose {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            }
+
+            #editback{
+                position: fixed;
+                height: 100%;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.9);
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 100;
+                display:none
+              }
+
+              .editclose:hover,
+          .editclose:focus {
+          color: #000;
+          text-decoration: none;
+          cursor: pointer;
+          }
+
+          .editclose {
+            color: #aaaaaa;
+            position:absolute;
+            margin-left: 94%;
+            font-size: 28px;
+            font-weight: bold;
+            }

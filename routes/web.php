@@ -70,3 +70,7 @@ Route::get('/About', function () {
 Route::get('Contact', function () {
     return view('Base/contact');
 });
+
+// Route::get('test', function () {
+//     return view('test');
+// });

@@ -14,6 +14,20 @@ class StockPage extends Component
 
     public function updatedSearch()
     {
+        if ($this->selected === 'others') {
+            $this->stocks = Stock::where([
+                ['category', '!=', 'wood'],
+                ['category', '!=', 'plastic'],
+                ['category', '!=', 'metal'],
+                ['category', '!=', 'concrete'],
+            ])->orderBy('created_at', 'desc')->where('product', 'LIKE', '%' . $this->search . '%')->get();
+
+            return;
+        } else if ($this->selected === 'all') {
+            $this->stocks = Stock::where('product', 'LIKE', '%' . $this->search . '%')->orderBy('created_at', 'desc')->get();
+
+            return;
+        }
         $this->stocks = Stock::where('category', $this->selected)->where('product', 'LIKE', '%' . $this->search . '%')->get();
     }
 

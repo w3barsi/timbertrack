@@ -21,7 +21,6 @@
 
 
 <div id="categories" class="fade-in1">
-    <div id="selectedCategory"> </div>
     <a class="hover-shadow hover-color" href="{{ url('/Stock') }}">
         <span>V</span><span>i</span><span>e</span><span>w</span> <span>A</span><span>l</span><span>l</span> </a>
     <a class="hover-shadow hover-color" href="{{ url('/Stock/wood') }}">

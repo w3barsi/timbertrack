@@ -2,18 +2,18 @@
     <div class="login">
         <span class='close'>&times;</span>
         <h1> Add Product</h1>
-        <form wire:submit.prevent="submit">
-            <input type='text' name='products' placeholder='Product Name' required>
+        <form wire:submit.prevent="store">
+            <input type='text' wire:model="product" placeholder='Product Name' required>
             <label for='products'>
                 <i class='fas fa-box-open'></i>
             </label>
 
-            <input wire:model="test" type='number' name='available' placeholder='Available Pieces' required>
+            <input type='number' wire:model="available" placeholder='Available Pieces' required>
             <label for='available'>
                 <i class='fas fa-calculator'></i>
             </label>
 
-            <input type='number' name='price' placeholder='Price' required>
+            <input type='number' wire:model="price" placeholder='Price' required>
             <label for='price'>
                 <i class='fas fa-dollar-sign'></i>
             </label>
@@ -21,25 +21,25 @@
 
             <select wire:model="category" name='category' placeholder='Category'
                 style="margin-top:0%; margin-left:-40px" required>
-                <option value='' selected hidden>Category</option>
+                <option value='' selected>Category</option>
                 <option value='wood'>Wood</option>
                 <option value='plastic'>Plastic</option>
                 <option value='metal'>Metal</option>
                 <option value='concrete'>Concrete</option>
                 <option value='paint'>Paint</option>
             </select>
-            <select name='category' placeholder='Category' onchange="reload()" style="margin-top:0%; margin-left: 20px"
+            <select wire:model.lazy="subcategory" placeholder='Subcategory' style="margin-top:0%; margin-left: 20px"
                 required>
-                <option value='' disabled selected hidden>Subcategory</option>
-                @if($subcategory != NULL)
-                @foreach ($subcategory as $option)
-                <option value='{{ $option->subcategory }}'>{{ $option->subcategory }}</option>
+                <option value=''>Subcategory</option>
+                @if($options != NULL)
+                @foreach ($options as $option)
+                <option value="{{ $option->subcategory }}">{{ $option->subcategory }}</option>
                 @endforeach
                 @endif
             </select>
-            <select name='category' placeholder='Category' onchange="reload()" id="select1"
-                style="margin-top:0%; margin-left:  20px" required>
-                <option value='' disabled selected hidden>Product</option>
+            <select wire:model="description" name='category' placeholder='Category' id="select1"
+                style="margin-top:0%; margin-left:  20px">
+                <option value='' selected>Product</option>
                 <option value='wood'>Wood</option>
                 <option value='plastic'>Plastic</option>
                 <option value='metal'>Metal</option>

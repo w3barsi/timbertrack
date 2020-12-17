@@ -3,9 +3,8 @@
 @endsection
 
 <div id="container">
-    <form method="POST" class="movein">
+    <form wire:submit.prevent="" method="POST" class="movein">
         <input wire:model="search" class="search__input" type="text" placeholder="Search">
-        <input type="submit" name="go_search" style="position:absolute; display:none">
     </form>
 
     <div id="container3" class="moveout">

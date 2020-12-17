@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Stock\StockPage;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\ResupplyController;
 use App\Http\Controllers\Auth\LoginController;
@@ -71,6 +72,4 @@ Route::get('Contact', function () {
     return view('Base/contact');
 });
 
-// Route::get('test', function () {
-//     return view('test');
-// });
+Route::get('/test', StockPage::class);

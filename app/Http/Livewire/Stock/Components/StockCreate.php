@@ -1,12 +1,21 @@
 <?php
 
+
+
 namespace App\Http\Livewire\Stock\Components;
 
+
+
 use App\Models\Stock;
+
 use Livewire\Component;
+
 use Illuminate\Validation\Rule;
 
+
+
 class StockCreate extends Component
+
 {
     public $product;
     public $description;
@@ -27,7 +36,6 @@ class StockCreate extends Component
 
     public function updatedCategory()
     {
-        $this->options = Stock::where('category', $this->category)->select('subcategory')->distinct()->get();
         $this->display = true;
     }
 
@@ -46,6 +54,9 @@ class StockCreate extends Component
 
     public function render()
     {
+        if (!empty($this->category)) {
+            $this->options = Stock::where('category', $this->category)->select('subcategory')->distinct()->order_by('updated_at', 'desc')->get();
+        }
         return view('livewire.stock.components.stock-create');
     }
 }

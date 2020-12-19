@@ -10,9 +10,10 @@
     <div id="container3" class="moveout">
         <table id="table-stock">
             <tr>
-                <th style="width:25%">Product</th>
-                <th style="width:25%">Available</th>
-                <th style="width:25%">Price</th>
+                <th style="width:35%">Product</th>
+                <th style="width:15%">Available</th>
+                <th style="width:15%">Price</th>
+                <th style="width:25%">Subcategory</th>
                 <th> </th>
             </tr>
             @foreach ($stocks as $stock)
@@ -27,6 +28,9 @@
                     <center>{{ $stock->price }}</center>
                 </td>
                 <td>
+                    <center>{{ $stock->subcategory }}</center>
+                </td>
+                <td>
                     <center>
 
                         <input type="submit" name="delete" value="" id="submit-icon2">
@@ -39,7 +43,7 @@
             </tr>
             @endforeach
 
-            <tr>
+            {{-- <tr>
                 <td>
                     <center><a style="color:black; text-decoration:none"> test 2 </a>
                 </td>
@@ -52,7 +56,7 @@
                 <td><input type='submit' name='update' value='' id='submit-icon'> <i class='fas fa-check'
                         style='margin-left:-20px; margin-top:5px; '></i></td>
 
-            </tr>
+            </tr> --}}
         </table>
     </div>
 

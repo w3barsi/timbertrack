@@ -36,6 +36,6 @@ class RegisterController extends Controller
         //sign-in
         auth()->attempt($req->only('email', 'password'));
         //redirect
-        return redirect()->route('Stock');
+        return redirect()->route('Stocks');
     }
 }

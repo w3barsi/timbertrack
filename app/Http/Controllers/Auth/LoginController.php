@@ -23,6 +23,6 @@ class LoginController extends Controller
             return back()->with('status', 'Username or Password is incorrect.');
         }
 
-        return redirect()->route('Stock');
+        return redirect()->route('Stocks');
     }
 }

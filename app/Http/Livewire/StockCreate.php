@@ -9,11 +9,17 @@ class StockCreate extends Component
 {
     public $category;
     public $subcategory = NULL;
-    public $display = false;
+    public $display = true;
 
     public function updatedCategory()
     {
         $this->subcategory = Stock::where('category', $this->category)->select('subcategory')->distinct()->get();
+        $this->display = false;
+    }
+
+    public function updated()
+    {
+        dd("TEST");
         $this->display = true;
     }
 

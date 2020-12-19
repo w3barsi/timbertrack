@@ -96,14 +96,14 @@
     <div id="menu">
         <div id="stock">
             <i class="fa fa-cube" style="color:white; font-size: 30px; margin-top:5%; margin-left:5%;"></i>
-            <a href="{{ url('/Stock') }}" style="font-size: 30px; color:white; margin-left:4%; text-decoration:none">
-                STOCK </a>
+            <a href="{{ route('Stocks') }}" style="font-size: 30px; color:white; margin-left:4%; text-decoration:none">
+                STOCKS </a>
         </div>
 
         <div id="progress">
             <i class="fa fa-tasks" style="color:white; font-size: 30px; margin-top:5%; margin-left:5%;"></i>
-            <a href="{{ url('/Progress') }}" style="font-size: 30px; color:white; margin-left:4%; text-decoration:none">
-                PROGRESS </a>
+            <a href="{{ route('Orders') }}" style="font-size: 30px; color:white; margin-left:4%; text-decoration:none">
+                ORDERS </a>
         </div>
 
         <div id="dashboard">

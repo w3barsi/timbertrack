@@ -1,99 +1,72 @@
-@extends('Official-Content/layout')
-
 @section('css')
 <link href="{{asset('css/progress.css')}}" rel="stylesheet">
 @endsection
 
-@section('body')
-<form method="POST" class="movein">
-    <input class="search__input" type="text" placeholder="Search">
-    <input type="submit" name="go_search" style="position:absolute; display:none">
-</form>
+<div id="container">
+    <form method="POST" class="movein">
+        <input class="search__input" type="text" placeholder="Search">
+        <input type="submit" name="go_search" style="position:absolute; display:none">
+    </form>
 
-<div id="container3" class="moveout">
-    <table id="table-progress">
-        <tr>
-            <th style="width:15%">ID</th>
-            <th style="width:25%">Name</th>
-            <th style="width:25%">Address</th>
-            <th style="width:15%">Total</th>
-            <th style="width:20%">Status</th>
-        </tr>
-        <tr>
-            <center>
-                <td>
-                    1
-                </td>
-                <td>
-                    Robine
-                </td>
-                <td>
-                    Address
-                </td>
-                <td>
-                    500
-                </td>
-                <td>
-                    <select style="">
-                        <option disabled selected hidden>ONGOING</option>
-                        <option>COMPLETED</option>
-                        <option>DECLINED</option>
-                    </select>
-                </td>
-            </center>
-        </tr>
-    </table>
-</div>
-
-
-<button class="fancy fade-in2">
-    <span class="top-key"></span>
-    <a onclick="HideShowAdd()" class="">Create</a>
-    <span class="bottom-key-1"></span>
-    <span class="bottom-key-2"></span>
-</button>
-<button class="fancy fade-in1" style="margin-left:-79%; position: absolute;">
-    <span class="top-key"></span>
-    <a onclick="HideShowSort()" class="">Sort</a>
-    <span class="bottom-key-1"></span>
-    <span class="bottom-key-2"></span>
-</button>
-<div style="width:20%; height:10% ;  position:absolute; margin-left:38%; margin-top:-5%">
-    <center>
-        <h1> DATE <h1>
-    </center>
-</div>
-
-<div id="elf" style="display:none">
-    <div class="login">
-        <span class='close'>&times;</span>
-        <h1> Add Progress</h1>
-        <form action='' method='POST'>
-
-            <div>
-                <select name='category' placeholder='Category' onchange="reload()" id="select1" required>
-                    <option value='' disabled selected hidden>Category</option>
-                    <option value='wood'>Wood</option>
-                    <option value='plastic'>Plastic</option>
-                    <option value='metal'>Metal</option>
-                    <option value='concrete'>Concrete</option>
-                    <option value='paint'>Paint</option>
-                </select>
-            </div>
-
-            <div>
-                <input type='text' name='name' placeholder='Name' style="" required><br>
-            </div>
-            <div>
-                <input type='text' name='address' placeholder='Address' style="" required><br>
-            </div>
-            <div>
-                <input type='number' name='quantity' placeholder='Quantity' style="" required>
-            </div>
-
-            <input type='submit' name='insert' value='Add'>
-        </form>
+    <div id="container3" class="moveout">
+        <table id="table-progress">
+            <tr>
+                <th style="width:15%">ID</th>
+                <th style="width:25%">Name</th>
+                <th style="width:25%">Address</th>
+                <th style="width:15%">Total</th>
+                <th style="width:20%">Status</th>
+            </tr>
+            @if (count($orders) > 0)
+            @foreach ($orders as $order)
+            <tr>
+                <center>
+                    <td>
+                        {{ $order->id }}
+                    </td>
+                    <td>
+                        {{ $order->id }}
+                    </td>
+                    <td>
+                        {{ $order->name }}
+                    </td>
+                    <td>
+                        {{ $order->total }}
+                    </td>
+                    <td>
+                        <select style="">
+                            <option disabled selected hidden>ONGOING</option>
+                            <option>COMPLETED</option>
+                            <option>DECLINED</option>
+                        </select>
+                    </td>
+                </center>
+            </tr>
+            @endforeach
+            @endif
+        </table>
     </div>
+
+
+    <button class="fancy fade-in2">
+        <span class="top-key"></span>
+        <a onclick="HideShowAdd()" class="">Create</a>
+        <span class="bottom-key-1"></span>
+        <span class="bottom-key-2"></span>
+    </button>
+    <button class="fancy fade-in1" style="margin-left:-79%; position: absolute;">
+        <span class="top-key"></span>
+        <a onclick="HideShowSort()" class="">Sort</a>
+        <span class="bottom-key-1"></span>
+        <span class="bottom-key-2"></span>
+    </button>
+    <div style="width:20%; height:10% ;  position:absolute; margin-left:38%; margin-top:-5%">
+        <center>
+            <h1> DATE <h1>
+        </center>
+    </div>
+
+    <livewire:order.components.create-order />
 </div>
 
 <center>
@@ -157,7 +130,7 @@
         </div>
     </div>
 </center>
-@endsection
+</div>
 
 @section('script')
 <script>

@@ -20,7 +20,7 @@ class StockPage extends Component
                 ['category', '!=', 'plastic'],
                 ['category', '!=', 'metal'],
                 ['category', '!=', 'concrete'],
-            ])->orderBy('created_at', 'desc')->where('product', 'LIKE', '%' . $this->search . '%')->get();
+            ])->orderBy('created_at', 'desc')->where('subcategory', 'LIKE', '%' . $this->search . '%')->orWhere('product', 'LIKE', '%' . $this->search . '%')->get();
 
             return;
         } else if ($this->selected === 'all') {

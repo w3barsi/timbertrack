@@ -74,59 +74,30 @@
         <div class="sort">
             <span class='exit'>&times;</span>
             <h1 id="left"> Sorting</h1>
-            <div id="forInsert2">
-                <br> <br> <br>
-                <center>
-                    <h3> CLICK HERE TO ADD <br>
-                        <button onclick="HideShowInserting()" id="add"> <i class="fa fa-plus-circle"
-                                style="font-size:33px;">
-                            </i> </button> </h3>
-                </center>
-            </div>
-            <div id="forInsert">
-                <h1 id="right"> Insert</h1>
-                <form action='' method='POST'>
-                    <select name='category' placeholder='Category' onchange="reload()" id="select1"
-                        style="margin-top:0%; margin-left:-40px" required>
-                        <option value='' disabled selected hidden>Category</option>
-                        <option value='wood'>Wood</option>
-                        <option value='plastic'>Plastic</option>
-                        <option value='metal'>Metal</option>
-                        <option value='concrete'>Concrete</option>
-                        <option value='paint'>Paint</option>
-                    </select>
-                    <select name='category' placeholder='Category' onchange="reload()" id="select1"
-                        style="margin-top:0%; margin-left: 25%" required>
-                        <option value='' disabled selected hidden>Subcategory</option>
-                        <option value='wood'>Wood</option>
-                        <option value='plastic'>Plastic</option>
-                        <option value='metal'>Metal</option>
-                        <option value='concrete'>Concrete</option>
-                        <option value='paint'>Paint</option>
-                    </select>
-                    <select name='category' placeholder='Category' onchange="reload()" id="select1"
-                        style="margin-top:0%; margin-left: 58%" required>
-                        <option value='' disabled selected hidden>Product</option>
-                        <option value='wood'>Wood</option>
-                        <option value='plastic'>Plastic</option>
-                        <option value='metal'>Metal</option>
-                        <option value='concrete'>Concrete</option>
-                        <option value='paint'>Paint</option>
-                    </select>
-
-                    <input type='text' name='lastname' placeholder='Last Name ' style="margin-top:70px; " required>
-                    <input type='text' name='firstname' placeholder='First Name' style="margin-top:20px;" required>
-                    <input type='text' name='address' placeholder='Address' style=" margin-top:20px;" required>
-                    <input type='number' name='quantity' placeholder='Quantity' style="margin-top:20px; " required>
-
-
-
-                    </select>
-                    <input type='submit' name='insert' value='Add'>
+            <div style="position: absolute;margin-top:5%;height:500px; ">
+                <form action='' method="POST">
+                    <h1 style="margin-bottom: 0px; "><center> &nbsp; Date</center></h1>
+                <input id="flatpickr"><br>
+                <h1 style="margin-bottom: 0px; "><center> &nbsp; &nbsp;&nbsp;Category</center></h1>
+                <select name='category' placeholder='Category' onchange="reload()" id="select1" style="margin-top:7%; margin-left:-50px" required>
+                    <option value='' disabled selected hidden>Category</option>
+                    <option value='wood'>Wood</option>
+                    <option value='plastic'>Plastic</option>
+                    <option value='metal'>Metal</option>
+                    <option value='concrete'>Concrete</option>
+                    <option value='paint'>Paint</option>
+                </select><br>
+                <select name='category' placeholder='Category' onchange="reload()" id="select1" style="margin-top:20%; margin-left:-50px" required>
+                    <option value='' disabled selected hidden>Subcategory</option>
+                    <option value='wood'>Wood</option>
+                    <option value='plastic'>Plastic</option>
+                    <option value='metal'>Metal</option>
+                    <option value='concrete'>Concrete</option>
+                    <option value='paint'>Paint</option>
+                </select>
+                <input type='submit' name='insert' value='Sort ' style="margin-top:50%; margin-left: -10%; ">
                 </form>
             </div>
-            <div class="vl"></div>
-            </form>
         </div>
     </div>
 </center>
@@ -134,6 +105,7 @@
 
 @section('script')
 <script>
+        var example = flatpickr('#flatpickr');
     function HideShowInserting() {
                 var x = document.getElementById("forInsert2");
                 var y = document.getElementById("forInsert");

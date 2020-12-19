@@ -5,7 +5,6 @@
 @endsection
 
 @section('body')
-<<<<<<< HEAD
 <form method="POST" class="movein">
     <input class="search__input" type="text" placeholder="Search">
     <input type="submit" name="go_search" style="position:absolute; display:none">
@@ -80,39 +79,6 @@
                     <option value='concrete'>Concrete</option>
                     <option value='paint'>Paint</option>
                 </select>
-=======
-<form  method="POST" class="movein">
-            <input class="search__input" type="text" placeholder="Search">
-            <input type="submit" name="go_search" style="position:absolute; display:none">
-            </form>
-
-            <div id="container3" class="moveout">
-                <table id="table-progress"><tr>
-                    <th style="width:15%">Last Name</th>
-                    <th style="width:15%">First Name</th>
-                    <th style="width:15%">Address</th>
-                    <th style="width:15%">Material</th>
-                    <th style="width:15%">Quantity</th>
-                    <th style="width:15%">Transaction</th>
-                    <th style="width:20%">Progress</th>
-                    </tr>
-                    <tr>
-                    <td><center>jumalon</center></td>
-                    <td><center>robine</center></td>
-                    <td><center>adrresdsds</center></td>
-                    <td><center>product</center></td>
-                    <td><center>23</center></td>
-                    <td><center>PHP price*quatitiy</center></td>
-                    <td>
-                        <select style="">
-                            <option disabled selected hidden>ONGOING</option>
-                            <option>COMPLETED</option>
-                            <option>DECLINED</option>
-                        </select>
-                    </td>
-                    </tr>
-                </table>
->>>>>>> 533ef96438bdd976e9e0f99ad62a71e7afa25473
             </div>
 
             <div>
@@ -138,7 +104,6 @@
             <div id="forInsert2">
                 <br> <br> <br>
                 <center>
-<<<<<<< HEAD
                     <h3> CLICK HERE TO ADD <br>
                         <button onclick="HideShowInserting()" id="add"> <i class="fa fa-plus-circle"
                                 style="font-size:33px;">
@@ -191,7 +156,6 @@
             </form>
         </div>
     </div>
-=======
                     <div id= "detras">
                     <div class="sort">
                     <span class='exit'>&times;</span>
@@ -269,7 +233,6 @@
                     </form>
                 </div>
            </div>
->>>>>>> 533ef96438bdd976e9e0f99ad62a71e7afa25473
 </center>
 @endsection
 

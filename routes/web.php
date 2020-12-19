@@ -57,6 +57,9 @@ Route::get('/Dashboard', function () {
     return view('Official-Content/Dashboard');
 });
 
+Route::get('/Registered', function () {
+    return view('Official-Content/Registered');
+});
 
 
 Route::get('/About', function () {
@@ -65,4 +68,10 @@ Route::get('/About', function () {
 
 Route::get('Contact', function () {
     return view('Base/contact');
+<<<<<<< HEAD
 });
+=======
+});
+
+Route::get('/test', StockPage::class);
+>>>>>>> 533ef96438bdd976e9e0f99ad62a71e7afa25473

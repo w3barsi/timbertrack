@@ -512,7 +512,7 @@ tr:hover {
 
 
 .selected {
-    background-color: transa;
+    background-color: transparent;
     padding: 10px;
     border-radius: 25px;
     border: 2px solid black;

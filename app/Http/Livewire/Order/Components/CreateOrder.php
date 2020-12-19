@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Order\Components;
 
 use App\Models\Order;
+use Facade\FlareClient\Http\Response;
 use Livewire\Component;
 
 class CreateOrder extends Component
@@ -13,11 +14,6 @@ class CreateOrder extends Component
 
     public $display;
 
-
-    public function test()
-    {
-        dd("Test");
-    }
 
     protected $rules = [
         'name' => 'required|max:256',
@@ -39,13 +35,15 @@ class CreateOrder extends Component
     {
         $this->validate();
 
-        Order::create([
+        $order = Order::create([
             'name' => $this->name,
             'address' => $this->address,
             'status' => $this->status,
         ]);
 
         $this->display = false;
+
+        return redirect()->route('Orders.order', $order);
     }
     public function render()
     {

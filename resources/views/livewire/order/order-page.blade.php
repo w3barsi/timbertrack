@@ -32,9 +32,9 @@
         <span class="bottom-key-1"></span>
         <span class="bottom-key-2"></span>
     </button>
-    <button class="fancy fade-in1" style="margin-left:-79%; position: absolute;">
+    <button onclick="HideShowSort()" class="fancy fade-in1" style="margin-left:-79%; position: absolute;">
         <span class="top-key"></span>
-        <a onclick="HideShowSort()" class="">Sort</a>
+        <a>Sort</a>
         <span class="bottom-key-1"></span>
         <span class="bottom-key-2"></span>
     </button>
@@ -54,26 +54,32 @@
             <h1 id="left"> Sorting</h1>
             <div style="position: absolute;margin-top:5%;height:500px; ">
                 <form action='' method="POST">
-                    <h1 style="margin-bottom: 0px; "><center> &nbsp; Date</center></h1>
-                <input id="flatpickr"><br>
-                <h1 style="margin-bottom: 0px; "><center> &nbsp; &nbsp;&nbsp;Category</center></h1>
-                <select name='category' placeholder='Category' onchange="reload()" id="select1" style="margin-top:7%; margin-left:-50px" required>
-                    <option value='' disabled selected hidden>Category</option>
-                    <option value='wood'>Wood</option>
-                    <option value='plastic'>Plastic</option>
-                    <option value='metal'>Metal</option>
-                    <option value='concrete'>Concrete</option>
-                    <option value='paint'>Paint</option>
-                </select><br>
-                <select name='category' placeholder='Category' onchange="reload()" id="select1" style="margin-top:20%; margin-left:-50px" required>
-                    <option value='' disabled selected hidden>Subcategory</option>
-                    <option value='wood'>Wood</option>
-                    <option value='plastic'>Plastic</option>
-                    <option value='metal'>Metal</option>
-                    <option value='concrete'>Concrete</option>
-                    <option value='paint'>Paint</option>
-                </select>
-                <input type='submit' name='insert' value='Sort ' style="margin-top:50%; margin-left: -10%; ">
+                    <h1 style="margin-bottom: 0px; ">
+                        <center> &nbsp; Date</center>
+                    </h1>
+                    <input id="flatpickr"><br>
+                    <h1 style="margin-bottom: 0px; ">
+                        <center> &nbsp; &nbsp;&nbsp;Category</center>
+                    </h1>
+                    <select name='category' placeholder='Category' onchange="reload()" id="select1"
+                        style="margin-top:7%; margin-left:-50px" required>
+                        <option value='' disabled selected hidden>Category</option>
+                        <option value='wood'>Wood</option>
+                        <option value='plastic'>Plastic</option>
+                        <option value='metal'>Metal</option>
+                        <option value='concrete'>Concrete</option>
+                        <option value='paint'>Paint</option>
+                    </select><br>
+                    <select name='category' placeholder='Category' onchange="reload()" id="select1"
+                        style="margin-top:20%; margin-left:-50px" required>
+                        <option value='' disabled selected hidden>Subcategory</option>
+                        <option value='wood'>Wood</option>
+                        <option value='plastic'>Plastic</option>
+                        <option value='metal'>Metal</option>
+                        <option value='concrete'>Concrete</option>
+                        <option value='paint'>Paint</option>
+                    </select>
+                    <input type='submit' name='insert' value='Sort ' style="margin-top:50%; margin-left: -10%; ">
                 </form>
             </div>
         </div>
@@ -83,7 +89,7 @@
 
 @section('script')
 <script>
-        var example = flatpickr('#flatpickr');
+    var example = flatpickr('#flatpickr');
     function HideShowInserting() {
                 var x = document.getElementById("forInsert2");
                 var y = document.getElementById("forInsert");

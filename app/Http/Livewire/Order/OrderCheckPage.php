@@ -10,6 +10,14 @@ class OrderCheckPage extends Component
     public $order;
     public $purchases;
 
+    public function updatedPurchases()
+    {
+        $total;
+        foreach ($purchases as $key => $value) {
+            # code...
+        }
+    }
+
     public function mount(Order $order)
     {
         $this->order = $order;

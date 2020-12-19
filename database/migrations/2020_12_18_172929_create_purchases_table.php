@@ -19,7 +19,7 @@ class CreatePurchasesTable extends Migration
             $table->foreignId('order_id')->constrained();
             $table->foreignId('stock_id')->constrained();
             $table->integer('quantity');
-            $table->unsignedInteger('total');
+            $table->unsignedInteger('total')->nullable();
             $table->boolean('is_prepared');
         });
     }

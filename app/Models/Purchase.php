@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Stock;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Purchase extends Model
 {
@@ -12,4 +13,9 @@ class Purchase extends Model
     protected $fillable = [
         'order_id', 'stock_id', 'quantity', 'total', 'is_prepared'
     ];
+
+    public function stock()
+    {
+        return $this->belongsTo(Stock::class);
+    }
 }

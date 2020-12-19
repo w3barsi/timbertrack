@@ -151,29 +151,29 @@
                 <h2>&nbsp;</h2>
 
                     <p style=" margin-bottom: auto; color:black">First Name</p>
-                    <input type="text" name="first_name" value="">
+                    <input type="text" name="first_name" style="line-height: 30px;"  value="">
 
                     <p style=" margin-bottom: auto; color:black">Password</p>
-                    <input type="password" id="password" value="" name="password" onchange='check_pass();' required>
+                    <input type="password" id="password" value="" style="line-height: 30px;" name="password" onchange='check_pass();' required>
 
                     <p style=" margin-bottom: auto; color:black">Username</p>
-                    <input type="text" name="user" value="">
+                    <input type="text" name="user" style="line-height: 30px;"  value="">
 
                     <p style=" margin-bottom: auto; color:black">Email Address</p>
-                    <input type="email" name="email" value="">
+                    <input type="email" name="email" style="line-height: 30px;"  value="">
 
             </div>
             <div class="column right" style="background-color:#F5F5F5;">
                 <h2>&nbsp;</h2>
                 <p style=" margin-bottom: auto;color:black">Last Name</p>
-                <input type="text" name="last_name" value="">
+                <input type="text" name="last_name" style="line-height: 30px;"  value="">
 
                 <p style=" margin-bottom: auto; color:black">Confirm Password</p>
-                <input type="password" id="confirm_password" name="confirm" onchange='check_pass();' value="" required>
+                <input type="password" id="confirm_password" name="confirm" style="line-height: 30px;"  onchange='check_pass();' value="" required>
                 <span id='message'></span>
 
                 <p style=" margin-bottom: auto; color:black">Mobile</p>
-                <input type="number" name="mobile" value="">
+                <input type="number" name="mobile" style="line-height: 30px;"  value="">
                 <center><br>
                 <input type="hidden" name="id" value="">
                 <input type="submit" style="width:30%; position:absolute; margin-top:1%; margin-left:-20%; background-color: #006666;"

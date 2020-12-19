@@ -11,7 +11,13 @@ class CreateOrder extends Component
     public $address;
     public $status = "ongoing";
 
-    public $display = false;
+    public $display;
+
+
+    public function test()
+    {
+        dd("Test");
+    }
 
     protected $rules = [
         'name' => 'required|max:256',
@@ -19,6 +25,15 @@ class CreateOrder extends Component
         'status' => 'required',
     ];
 
+    public function updating()
+    {
+        $this->display = true;
+    }
+
+    public function mount()
+    {
+        $this->display = false;
+    }
 
     public function create()
     {
@@ -29,7 +44,8 @@ class CreateOrder extends Component
             'address' => $this->address,
             'status' => $this->status,
         ]);
-        $this->display = true;
+
+        $this->display = false;
     }
     public function render()
     {

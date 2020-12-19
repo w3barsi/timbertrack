@@ -33,6 +33,10 @@ class StockCreate extends Component
         'subcategory' => 'required',
     ];
 
+    public function updating()
+    {
+        $this->display = true;
+    }
 
     public function updatedCategory()
     {
@@ -55,7 +59,7 @@ class StockCreate extends Component
     public function render()
     {
         if (!empty($this->category)) {
-            $this->options = Stock::where('category', $this->category)->select('subcategory')->distinct()->order_by('updated_at', 'desc')->get();
+            $this->options = Stock::where('category', $this->category)->select('subcategory')->distinct()->orderBy('updated_at', 'desc')->get();
         }
         return view('livewire.stock.components.stock-create');
     }

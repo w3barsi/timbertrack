@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Order\OrderPage;
 use App\Http\Livewire\Stock\StockPage;
 use App\Http\Controllers\StockController;
+use App\Http\Livewire\Order\OrderCheckPage;
 use App\Http\Controllers\ResupplyController;
 use App\Http\Livewire\Progress\ProgressPage;
 use App\Http\Controllers\Auth\LoginController;
@@ -24,6 +25,7 @@ use App\Http\Controllers\Auth\RegisterController;
 Route::middleware(['auth'])->group(function () {
     Route::get('/Stocks', StockPage::class)->name('Stocks');
     Route::get('/Orders', OrderPage::class)->name('Orders');
+    Route::get('/Orders/{order}', OrderCheckPage::class)->name('Orders.order');
 });
 
 Route::middleware(['auth'])->group(function () {

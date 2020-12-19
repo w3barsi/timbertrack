@@ -13,7 +13,7 @@ class Order extends Model
         'name', 'address', 'status', 'total'
     ];
 
-    public function purchase()
+    public function purchases()
     {
         return $this->hasMany(Purchase::class);
     }

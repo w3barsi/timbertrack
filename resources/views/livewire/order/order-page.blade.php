@@ -19,29 +19,7 @@
             </tr>
             @if (count($orders) > 0)
             @foreach ($orders as $order)
-            <tr>
-                <center>
-                    <td>
-                        {{ $order->id }}
-                    </td>
-                    <td>
-                        {{ $order->id }}
-                    </td>
-                    <td>
-                        {{ $order->name }}
-                    </td>
-                    <td>
-                        {{ $order->total }}
-                    </td>
-                    <td>
-                        <select style="">
-                            <option disabled selected hidden>ONGOING</option>
-                            <option>COMPLETED</option>
-                            <option>DECLINED</option>
-                        </select>
-                    </td>
-                </center>
-            </tr>
+            <livewire:order.components.order-row :order="$order" />
             @endforeach
             @endif
         </table>

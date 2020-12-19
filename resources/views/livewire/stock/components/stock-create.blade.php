@@ -1,4 +1,4 @@
-<div id="back" @if($display===false) style="display:none;" @endif>
+<div id="back" @if($display===true)style="display: block;" @else style="display: none;" @endif>
     <div class="login">
         <span class='close'>&times;</span>
         <h1> Add Product</h1>

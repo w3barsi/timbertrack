@@ -12,7 +12,7 @@ class OrderPage extends Component
 
     public function mount()
     {
-        $this->orders = Order::orderBy('created_at', 'desc')->get();
+        $this->orders = Order::orderBy('created_at')->get();
     }
 
     public function render()

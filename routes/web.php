@@ -59,6 +59,10 @@ Route::get('/Dashboard', function () {
     return view('Official-Content/Dashboard');
 });
 
+Route::get('/Product', function () {
+    return view('Official-Content/Product');
+});
+
 Route::get('/Registered', function () {
     return view('Official-Content/Registered');
 });

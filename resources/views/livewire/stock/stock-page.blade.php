@@ -60,7 +60,6 @@
         </table>
     </div>
 
-    {{-- <button class="moveout" onclick="HideShowHistory()" id="button" style="left:25%; top:29.5%;"> Log-History </button> --}}
 
 
     <div id="categories" class="fade-in1">
@@ -86,9 +85,16 @@
         <livewire:stock.components.stock-create />
     </div>
 
-    <button class="fancy fade-in2">
+    <button class="fancy ">
         <span class="top-key"></span>
         <a onclick="HideShowAdd()" class="">Create</a>
+        <span class="bottom-key-1"></span>
+        <span class="bottom-key-2"></span>
+    </button>
+
+    <button class="fancy" style="margin-left:-23%; position: absolute;">
+        <span class="top-key"></span>
+        <a onclick="HideShowHistory()" class="">History</a>
         <span class="bottom-key-1"></span>
         <span class="bottom-key-2"></span>
     </button>
@@ -97,8 +103,21 @@
         <div class='log-history'>
             <span class='exit'>&times;</span>
             <h1>HISTORY</h1>
+            <table style="width: 90%; margin-left:4%">
+                <tr>
+                    <th style="width:25%">User</th>
+                    <th style="width:25%">Product</th>
+                    <th style="width:25%">Timestamp</th>
+                    <th style="width:25%">Intention</th>
+                </tr>
+                <tr>
+                    <td>robine</td>
+                    <td>Asol</td>
+                    <td>19/12/2020 14:00</td>
+                    <td>Update/Delete/Insert</td>
+                </tr>
+            </table>
         </div>
-
     </div>
 </div>
 

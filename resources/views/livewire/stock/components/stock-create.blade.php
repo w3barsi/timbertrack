@@ -28,6 +28,9 @@
                 <option value='concrete'>Concrete</option>
                 <option value='paint'>Paint</option>
             </select>
+            <label for='category'>
+                <i class='fas fa-table'></i>
+            </label>
             <select wire:model.lazy="subcategory" placeholder='Subcategory' style="margin-top:0%; margin-left: 20px"
                 required>
                 <option value=''>Subcategory</option>
@@ -37,16 +40,8 @@
                 @endforeach
                 @endif
             </select>
-            <select wire:model="description" name='category' placeholder='Category' id="select1"
-                style="margin-top:0%; margin-left:  20px">
-                <option value='' selected>Product</option>
-                <option value='wood'>Wood</option>
-                <option value='plastic'>Plastic</option>
-                <option value='metal'>Metal</option>
-                <option value='concrete'>Concrete</option>
-                <option value='paint'>Paint</option>
-            </select>
-            <label for='category'>
+
+            <label for='subcategory'>
                 <i class='fas fa-table'></i>
             </label>
             <input type='submit'>

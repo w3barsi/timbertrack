@@ -1,0 +1,94 @@
+body {
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+  }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid black;
+    font-size: 20px;
+}
+td {
+    flex: 1 1 20%;
+    text-align: center;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: middle;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+tr:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.totalSale{
+    position:fixed;
+    width: 23%;
+    height: 70px;
+    border: dotted;
+    margin-left: 50%;
+    font-size: 25px;
+    padding: 15px;
+}
+
+.nav-dropdown {
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: -5px auto;
+    position: absolute;
+    height:0px;
+    left:-999em;
+    text-align:left;
+    padding: 0;
+    border-top: 0;
+    width: 100%;
+    background:#333;
+    color: #f2f2f2;
+    border-bottom: 10px solid #25272a;
+    -webkit-border-bottom-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+    -webkit-transition: height 0.5s ease-in;
+    -moz-transition: height 0.5s ease-in;
+    -o-transition: height 0.5s ease-in;
+    -ms-transition: height 0.5s ease-in;
+     transition: height 0.5s ease-in;
+}
+
+.totalSale:hover{
+    color: white;
+    background-color: black;
+    border:none;
+}
+
+.totalSale:hover .nav-dropdown{
+    left: 0;
+    top: 75.2px;
+    z-index: 11;
+    height:400px;
+}
+
+#totaltabel{
+    background-color: transparent;
+    border: none;
+     width: 90%;
+     margin:10px 23px;
+}
+
+#totaltabel tr:nth-child(even) {
+    background-color: transparent;
+}
+#totaltabel tr:hover {
+    background-color: transparent;
+}

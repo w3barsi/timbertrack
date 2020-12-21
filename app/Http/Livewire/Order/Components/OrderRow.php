@@ -17,8 +17,12 @@ class OrderRow extends Component
     public function updatedStatus()
     {
         $this->validate();
-        $this->order->status = $this->status;
-        $this->order->save();
+        if ($this->status === 'completed') {
+            $this->order->completed(true);
+        } else {
+            $this->order->completed(false);
+        }
+        return redirect()->to('/Orders');
     }
 
     public function mount(Order $order)

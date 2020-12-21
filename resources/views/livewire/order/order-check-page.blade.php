@@ -4,95 +4,83 @@
 @endsection
 <div id="container">
 
-    <div class="p-5 mx-auto w-full">
-        <div class="fixed  bg-gray-50 p-4 border-2 border-black rounded" style="font-size:20px;width:78%">
-            <h1>Name: &ensp; Robine Cole Jumalon
-                &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
-               Address: &ensp;hoodies fglksahfjhasjkhfkjas
-            <p class="float-right" > Status:&ensp; Ongoing</p>
-
-            </h1>
-
+    <div class="p-5 mx-auto">
+        <div wire:submit.prevent="" class="flex flex-row justify-between w- bg-gray-50 border-2 border-black rounded"
+            style="font-size:20px;">
+            <div class="py-2 px-3">Name: &ensp; <input type="text" class=" placeholder-black placeholder-opacity-100 "
+                    wire:model.lazy="name" placeholder="{{ $order->name }}" value="{{ $order->name }}">
+            </div>
+            <div class="py-2 px-3">Address: &ensp; <input type="text"
+                    class=" placeholder-black placeholder-opacity-100 " wire:model.lazy="address"
+                    placeholder="{{ $order->address }}" value="{{ $order->address }}">
+            </div>
+            <div class="@if($order->status === 'completed') bg-green-500 @else bg-red-500 @endif py-2 px-3">
+                Status:&ensp;
+                {{ strtoupper($order->status) }}</div>
         </div>
     </div>
 
-        <div class="p-20 mx-auto w-full p-4 ">
-            <div class="totalSale" >
-                <i class="fa fa-shopping-cart" style="display:inline; margin-right:70px;margin-left:20px;"></i> Total: Php TOTAL
-                <div class="nav-dropdown">
-                    <table  id="totaltabel" >
-                        <tr>
-                            @if(isset($purchases))
-                            @foreach ($purchases as $purchase)
-                            <td style="text-align: left"> &emsp;{{$purchase->stock->product}}</td>
-                            <td>total</td>
-                            @endforeach
-                            @endif
-                        </tr>
+    <div class="p-20 mx-auto w-full p-4 ">
+        <div class="totalSale">
+            <i class="fa fa-shopping-cart" style="display:inline; margin-right:70px;margin-left:20px;"></i>
+            {{ ($this->order->total ?? '0')}}
+            <div class="nav-dropdown">
+                <table id="totaltabel">
+                    @if(isset($purchases))
+                    @foreach ($purchases as $purchase)
+                    <tr>
+                        <td style="text-align: left"> &emsp;{{$purchase->stock->product}}</td>
+                        <td>{{ $purchase->quantity * $purchase->stock->price }}</td>
+                    </tr>
+                    @endforeach
+                    @endif
 
-                    </table>
-                </div>
+                </table>
             </div>
+        </div>
 
-            <div class=" p-4 w-8/12 bg-gray-50 border-black rounded"  style="overflow:auto; height:700px;">
-                <table>
+        <div class=" p-4 w-8/12 bg-gray-50 border-black rounded" style="overflow:auto; height:700px;">
+            <table>
+                <thead>
                     <tr>
                         <th>ID</th>
                         <th>Product</th>
                         <th>Price</th>
                         <th>Quantity</th>
                         <th>Total</th>
+                        <th></th>
                     </tr>
-                    <tr>
-                        @if(isset($purchases))
-                        @foreach ($purchases as $purchase)
-                        <td>{{$purchase->id}}</td>
-                        <td>{{$purchase->stock->product}}</td>
-                        <td>{{$purchase->stock->price}}</td>
-                        <td>{{$purchase->quantity}}</td>
-                        <td>total</td>
-                        @endforeach
-                        @endif
-                    </tr>
-                </table>
-            </div>
-
-            <div class="w-4/12 bg-white p-2 border-2 border-black rounded" style="margin-left: 70% ; margin-top:-16%">
-                <center>
-                    <h1>New Purchase</h1>
-                </center>
-                <form class="">
-                    <div class="space-x-2 flex flex-row" style="margin-left: 10px;">
-                        <div>
-                            <center>
-                                <label for="stock">Stock</label><br>
-                            </center>
-                            <input type="text" name="stock" class="h-10 border-2 border-black rounded">
-                        </div>
-                        <div>
-                            <center>
-                                <label for="quantity">Quantity</label><br>
-                            </center>
-                            <input type="number" name="quantity" class="h-10 border-2 border-black rounded">
-                        </div>
-                    </div>
-                    <br>
-                        <div>
-
-                            <center>
-                                <input type="checkbox" name="is_prepared" class="h-5 w-5" >
-                                <label for="is_prepared" style="font-size:20px;">Is Prepared</label>
-                            </center>
-                        </div>
-
-                    <div class="h-full">
-                        <center>
-                            <input type="submit" name="submit" value="Submit">
-                        </center>
-                    </div>
-                </form>
-            </div>
-
-
+                </thead>
+                @if(isset($purchases))
+                @foreach ($purchases as $purchase)
+                <livewire:order.components.order-check-row :purchase="$purchase" />
+                @endforeach
+                @endif
+            </table>
         </div>
+        <div class="w-4/12 bg-white p-2 border-2 border-black rounded" style="margin-left: 70% ; margin-top:-16%">
+            <center>
+                <h1>New Purchase</h1>
+            </center>
+            <div class="flex flex-col text-center">
+                <div>
+                    <label for="stock">Stock</label><br>
+                    <input type="text" name="stock" class="px-1 h-10 w-11/12 border-2 border-black text-center rounded">
+                </div>
+            </div>
+            <div class="mt-5">
+                <div>
+                    <label for="quantity">Quantity</label><br>
+                    <input type="number" name="quantity" class="h-10 border-2 border-black rounded">
+                </div>
+                <div>
+                    <input type="checkbox" name="is_prepared" class="h-5 w-5">
+                    <label for="is_prepared" style="font-size:20px;">Is Prepared</label>
+                </div>
+                <div class="h-full">
+                    <input type="submit" name="submit" value="Submit">
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

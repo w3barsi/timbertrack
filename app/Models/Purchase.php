@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Stock;
+use App\Models\Order;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -17,5 +18,10 @@ class Purchase extends Model
     public function stock()
     {
         return $this->belongsTo(Stock::class);
+    }
+
+    public function order()
+    {
+        return $this->belongsTo(Order::class);
     }
 }

@@ -10,6 +10,25 @@ class OrderCheckPage extends Component
     public $order;
     public $purchases;
 
+    public $name;
+    public $address;
+
+    public function status()
+    {
+    }
+
+    public function updatedAddress()
+    {
+        $this->order->address = $this->address;
+        $this->order->save();
+    }
+
+    public function updatedName()
+    {
+        $this->order->name = $this->name;
+        $this->order->save();
+    }
+
     public function updatedPurchases()
     {
         $total;
@@ -23,8 +42,11 @@ class OrderCheckPage extends Component
         $this->order = $order;
         $this->purchases = $this->order->purchases;
     }
+
     public function render()
     {
+        $this->order->checkStatus();
+        $this->order->getTotal();
         return view('livewire.order.order-check-page')
             ->extends('layouts.app')
             ->section('body');

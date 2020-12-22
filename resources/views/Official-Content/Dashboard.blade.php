@@ -10,7 +10,7 @@
 <input id="flatpickr" id="timer" style="position:absolute;   width: 13em;
 height: 13em; margin-left: 17%; margin-top: 3%; ">
 <label for="flatpickr">
-<i id="flatpickr"class="icon" style="margin-left: 17%; cursor:pointer;">
+<i class="icon" style="margin-left: 17%; cursor:pointer;">
     <em>Saturday</em>
     <strong>September</strong>
     <span>20</span>

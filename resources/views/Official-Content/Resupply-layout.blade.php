@@ -25,10 +25,14 @@
         <a class="hover-shadow hover-color" href="{{ url('/Resupply/others') }}"><span>O</span><span>t</span><span>h</span><span>e</span><span>r</span><span>s</span> </a>
 
     </div>
-
-    <h1 style=" position: absolute; margin-top:4%; margin-left:80%">DATE </h1>
-            </form>
-        </div>
+    <div style="position: absolute; margin-top:2%; margin-left:80%; width:15%; height:10% ;">
+    <input id="flatpickr">
+    <label for="flatpickr">
+        <h1 style="cursor: pointer; ">12/20/2020 </h1>
+    </label>
     </div>
+    <script>
+        var example = flatpickr('#flatpickr');
 
+    </script>
 @endsection

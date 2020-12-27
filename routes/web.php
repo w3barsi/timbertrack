@@ -10,6 +10,7 @@ use App\Http\Livewire\Progress\ProgressPage;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Livewire\Dashboard\DashboardPage;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/Stocks', StockPage::class)->name('Stocks');
     Route::get('/Orders', OrderPage::class)->name('Orders');
     Route::get('/Orders/{order}', OrderCheckPage::class)->name('Orders.order');
+    Route::get('/Dashboard', DashboardPage::class)->name('Dashboard');
 });
 
 Route::middleware(['auth'])->group(function () {
@@ -55,9 +57,9 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/logout', [LogoutController::class, 'index'])->name('logout');
 
 
-Route::get('/Dashboard', function () {
-    return view('Official-Content/Dashboard');
-});
+// Route::get('/Dashboard', function () {
+//     return view('Official-Content/Dashboard');
+// });
 
 Route::get('/Product', function () {
     return view('Official-Content/Product');

@@ -11,11 +11,12 @@
     <div id="container3" class="moveout">
         <table id="table-progress">
             <tr>
-                <th style="width:15%">ID</th>
+                <th style="width:10%">ID</th>
                 <th style="width:25%">Name</th>
                 <th style="width:25%">Address</th>
                 <th style="width:15%">Total</th>
                 <th style="width:20%">Status</th>
+                <th style="width:3%"></th>
             </tr>
             @if (count($orders) > 0)
             @foreach ($orders as $order)

@@ -24,4 +24,21 @@ class Purchase extends Model
     {
         return $this->belongsTo(Order::class);
     }
+
+    public function updateStock($qty)
+    {
+        $this->stock->available -= ($qty - $this->quantity);
+        $this->quantity = $qty;
+        $this->save();
+        $this->stock->save();
+    }
+
+    public function drop()
+    {
+        $this->stock->available += $this->quantity;
+        $this->stock->save();
+
+        $this->delete();
+        return null;
+    }
 }

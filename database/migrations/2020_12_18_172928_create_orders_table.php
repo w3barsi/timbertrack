@@ -18,8 +18,9 @@ class CreateOrdersTable extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('address')->nullable();
-            $table->enum('status', ['ongoing', 'completed', 'cancelled']);
+            $table->enum('status', ['ongoing', 'completed', 'cancelled'])->defaut('ongoing');
             $table->unsignedInteger('total')->nullable();
+            $table->unsignedInteger('payment')->nullable();
         });
     }
 

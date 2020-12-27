@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Order\Components;
 
 use App\Models\Order;
 use Livewire\Component;
+use App\Models\Purchase;
 
 class OrderRow extends Component
 {
@@ -13,6 +14,19 @@ class OrderRow extends Component
     protected $rules = [
         'status' => 'in:ongoing,completed,cancelled'
     ];
+
+    public function destroy()
+    {
+        foreach ($this->order->purchases as $purchase) {
+            $purchase->stock->available += $purchase->quantity;
+            $purchase->stock->save();
+            $p = Purchase::find($purchase->id);
+            $p->delete();
+        }
+
+        $this->order->delete();
+        return redirect()->to('/Orders');
+    }
 
     public function updatedStatus()
     {

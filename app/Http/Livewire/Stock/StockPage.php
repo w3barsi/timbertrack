@@ -35,6 +35,7 @@ class StockPage extends Component
     {
         $this->selected = $selected;
 
+
         if ($this->selected === 'others') {
             $this->stocks = Stock::where([
                 ['category', '!=', 'wood'],

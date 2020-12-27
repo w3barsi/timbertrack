@@ -8,12 +8,12 @@
         </td>
         <td>
             <div onclick="location.href='{{route('Orders.order', $order)}}'" style="cursor: pointer;">
-                {{ $order->id }}
+                {{ $order->name }}
             </div>
         </td>
         <td>
             <div onclick="location.href='{{route('Orders.order', $order)}}'" style="cursor: pointer;">
-                {{ $order->name }}
+                {{ $order->address }}
             </div>
         </td>
         <td>
@@ -31,6 +31,9 @@
                 <option value="ongoing">ONGOING</option>
                 @endif
             </select>
+        </td>
+        <td>
+            <div style="color: white; background-color: black; cursor: pointer;" wire:click="destroy">x</div>
         </td>
     </center>
     </tr>

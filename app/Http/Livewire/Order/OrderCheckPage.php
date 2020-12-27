@@ -21,12 +21,15 @@ class OrderCheckPage extends Component
     {
         $this->order->address = $this->address;
         $this->order->save();
+
+        return redirect()->to('/Orders/' . $this->order->id);
     }
 
     public function updatedName()
     {
         $this->order->name = $this->name;
         $this->order->save();
+        return redirect()->to('/Orders/' . $this->order->id);
     }
 
     public function updatedPurchases()

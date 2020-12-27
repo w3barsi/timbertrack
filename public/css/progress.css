@@ -284,118 +284,13 @@ tr:hover {
     z-index: 10;
     display: none;
 }
-#detras {
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 10;
-    display: none;
-}
-
-.exit {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.exit:hover,
-.exit:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.sort {
-    width: 60%;
-    height: 70%;
-    background-color: #ffffff;
-    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
-    margin-top: 5%;
-}
-#left {
-    margin-left: 7%;
-    text-align: center;
-    color: #5b6574;
-    font-size: 24px;
-    padding: 20px 0 20px 0;
-    border-bottom: 1px solid #dee0e4;
+#flatpickr{
     position: absolute;
-}
-
-#right {
-    margin-top: -16%;
-    margin-left: 47%;
-    text-align: center;
-    color: #5b6574;
-    font-size: 24px;
-    padding: 20px 0 20px 0;
-    border-bottom: 1px solid #dee0e4;
-    position: absolute;
-}
-.sort form input[type="text"],
-.sort form input[type="number"] {
-    width: 310px;
-    height: 50px;
-    border: 1px solid #dee0e4;
-    padding: 0 15px;
-    margin-left: 40px;
-}
-
-.sort form input[type="submit"] {
-    position: absolute;
-    width: 30%;
-    padding: 15px;
-    margin-top: 18%;
-    margin-left: -50%;
-    background-color: gray;
-    border: 0;
-    cursor: pointer;
-    font-weight: bold;
-    color: #ffffff;
-    transition: background-color 0.2s;
-}
-.sort form input[type="submit"]:hover {
-    background-color: black;
-    transition: background-color 0.2s;
-}
-.vl {
-    border-left: 3px solid #dee0e4;
-    height: 400px;
-    position: absolute;
-    margin-left: 22%;
-    margin-top: 6%;
-}
-
-#forInsert {
-    position: absolute;
-    height: 50%;
-    width: 36%;
-    margin-left: 21.5%;
-    margin-top: 7%;
-    display: none;
-}
-
-#forInsert2 {
-    color: #5b6574;
-    position: absolute;
-    height: 50%;
-    width: 36%;
-    margin-left: 23%;
-    margin-top: 7%;
-}
-
-#add {
-    top: 35px;
-    left: 365px;
-    border-radius: 50%;
-    width: 50px;
-    height: 47px;
-    padding: 0px;
-    cursor: pointer;
+    background-color: #DDDCDC;
+    margin-left:35%;
+    margin-top:27%;
+    width:160px;
+    height:0px;
+    outline:0;
+    border-width: 0 0 2px;
 }

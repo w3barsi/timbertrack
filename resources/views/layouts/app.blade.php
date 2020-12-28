@@ -35,7 +35,7 @@
             <img src="{{ asset('img/img_avatar.png') }}"
                 style="height:80%; position: absolute; border-radius:50%; top:10%; margin-left:1.2%" />
             @auth
-            <p style="font-size:30px; margin-left:48%; margin-top:10%"> {{ auth()->user()->username}} </p>
+            <p style="font-size:30px; margin-left:48%; margin-top:10%"> {{ auth()->user()->username }} </p>
 
 
             <div class="view">
@@ -74,6 +74,7 @@
             </div>
 
         </div>
+        @if(auth()->user()->hasPosition('admin'))
         <div class="hover2" style=" width:17%; height:100%; float:right; border-left: 1px solid gray;">
             <i class="fa fa-angle-down" style="margin-top:1.8%;margin-left:2%; position: absolute; font-size:35px; "
                 onclick="HideShowRegister()"> </i>
@@ -87,6 +88,7 @@
                         REGISTERED </a> </h3>
             </div>
         </div>
+        @endif
     </div>
 
 
@@ -128,12 +130,14 @@
         <div class="register">
             <span class='registerclose'>&times;</span>
             <h1> Register</h1>
-            <form action='' method='POST'>
-                <select style="margin-left: 11%">
+            <form action='{{ route('RegisterEmployee') }}' method='POST'>
+                @csrf
+                <select name="position" style="margin-left: 11%">
                     <option hidden selected disabled> Choose a position </option>
-                    <option style="font-size: 15px"> Cashier </option>
-                    <option style="font-size: 15px"> Supply Checker </option>
-                    <option style="font-size: 15px"> Employee </option>
+                    <option style="font-size: 15px" value="admin"> Admin </option>
+                    <option style="font-size: 15px" value="cashier"> Cashier </option>
+                    <option style="font-size: 15px" value="checker"> Checker </option>
+                    <option style="font-size: 15px" value="employee"> Employee </option>
                 </select>
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
                 &nbsp;&nbsp;

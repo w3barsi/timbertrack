@@ -9,38 +9,17 @@
 
     <div id="container3" class="moveout">
         <table id="table-stock">
-            <tr>
-                <th style="width:35%">Product</th>
-                <th style="width:15%">Available</th>
-                <th style="width:15%">Price</th>
-                <th style="width:25%">Subcategory</th>
-                <th> </th>
-            </tr>
+            <thead>
+                <tr>
+                    <th style="width:35%">Product</th>
+                    <th style="width:15%">Available</th>
+                    <th style="width:15%">Price</th>
+                    <th style="width:25%">Subcategory</th>
+                    <th> </th>
+                </tr>
+            </thead>
             @foreach ($stocks as $stock)
-            <tr>
-                <td>
-                    <center><a style="color:black; text-decoration:none"> {{ $stock->product }} </a></center>
-                </td>
-                <td>
-                    <center>{{ $stock->available }}</center>
-                </td>
-                <td>
-                    <center>{{ $stock->price }}</center>
-                </td>
-                <td>
-                    <center>{{ $stock->subcategory }}</center>
-                </td>
-                <td>
-                    <center>
-
-                        <input type="submit" name="delete" value="" id="submit-icon2">
-                        <i class="fas fa-trash" style="margin-left:-23px; margin-top:5px; "> </i>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="submit" name="form" value="" id="submit-icon3">
-                        <i class="fas fa-pen" style="margin-left:-20px; margin-top:5px; "></i>
-                    </center>
-                </td>
-            </tr>
+            <livewire:stock.components.stock-page-row :stock="$stock" />
             @endforeach
 
             {{-- <tr>

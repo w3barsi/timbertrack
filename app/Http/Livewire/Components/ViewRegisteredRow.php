@@ -11,6 +11,13 @@ class ViewRegisteredRow extends Component
     public $name;
     public $username;
     public $position;
+    public $status;
+
+    public function updatedStatus()
+    {
+        $this->user->status = $this->status;
+        $this->user->save();
+    }
 
     public function updatedName()
     {

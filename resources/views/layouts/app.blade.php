@@ -148,7 +148,9 @@
         </div>
     </div>
 
-    <div id="editback">
+
+    <livewire:components.edit-profile :user="auth()->user()" />
+    {{-- <div id="editback">
         <div id="edited" style="position:absolute">
             <span class='editclose'>&times;</span>
             <div class="column left" style="background-color:#F5F5F5">
@@ -159,53 +161,52 @@
                     <form action="" method='POST' enctype="multipart/form-data">
 
                         <img src="{{ asset('img/img_avatar.png') }}" id="img21" alt="Avatar"><br>
-                        <input type="file" name="file" id="imgInp"
-                            style="display:none; cursor:pointer; position:absolute; z-index:20; margin-top:6%; margin-left: -5%; " />
-                        <label for="imgInp"> <i
-                                style="width:29%; font-style: normal;  position:absolute; margin-top:5%; margin-left:-15%; background-color: #006666;"
-                                class="button button4">Upload new photo </i> </label>
-                </center>
-            </div>
-            <div class="column middle" style="background-color:#F5F5F5">
-                <h2>&nbsp;</h2>
-
-                <p style=" margin-bottom: auto; color:black">First Name</p>
-                <input type="text" name="first_name" style="line-height: 30px;" value="">
-
-                <p style=" margin-bottom: auto; color:black">Password</p>
-                <input type="password" id="password" value="" style="line-height: 30px;" name="password"
-                    onchange='check_pass();' required>
-
-                <p style=" margin-bottom: auto; color:black">Username</p>
-                <input type="text" name="user" style="line-height: 30px;" value="">
-
-                <p style=" margin-bottom: auto; color:black">Email Address</p>
-                <input type="email" name="email" style="line-height: 30px;" value="">
-
-            </div>
-            <div class="column right" style="background-color:#F5F5F5;">
-                <h2>&nbsp;</h2>
-                <p style=" margin-bottom: auto;color:black">Last Name</p>
-                <input type="text" name="last_name" style="line-height: 30px;" value="">
-
-                <p style=" margin-bottom: auto; color:black">Confirm Password</p>
-                <input type="password" id="confirm_password" name="confirm" style="line-height: 30px;"
-                    onchange='check_pass();' value="" required>
-                <span id='message'></span>
-
-                <p style=" margin-bottom: auto; color:black">Mobile</p>
-                <input type="number" name="mobile" style="line-height: 30px;" value="">
-                <center><br>
-                    <input type="hidden" name="id" value="">
-                    <input type="submit"
-                        style="width:30%; position:absolute; margin-top:1%; margin-left:-20%; background-color: #006666;"
-                        class="button button5" id="Edit_Profile" name="Edit_Profile" value="Update">
-                </center>
-                </form>
-            </div>
-        </div>
+    <input type="file" name="file" id="imgInp"
+        style="display:none; cursor:pointer; position:absolute; z-index:20; margin-top:6%; margin-left: -5%; " />
+    <label for="imgInp"> <i
+            style="width:29%; font-style: normal;  position:absolute; margin-top:5%; margin-left:-15%; background-color: #006666;"
+            class="button button4">Upload new photo </i> </label>
+    </center>
     </div>
+    <div class="column middle" style="background-color:#F5F5F5">
+        <h2>&nbsp;</h2>
 
+        <p style=" margin-bottom: auto; color:black">First Name</p>
+        <input type="text" name="first_name" style="line-height: 30px;" value="">
+
+        <p style=" margin-bottom: auto; color:black">Password</p>
+        <input type="password" id="password" value="" style="line-height: 30px;" name="password"
+            onchange='check_pass();' required>
+
+        <p style=" margin-bottom: auto; color:black">Username</p>
+        <input type="text" name="user" style="line-height: 30px;" value="">
+
+        <p style=" margin-bottom: auto; color:black">Email Address</p>
+        <input type="email" name="email" style="line-height: 30px;" value="">
+
+    </div>
+    <div class="column right" style="background-color:#F5F5F5;">
+        <h2>&nbsp;</h2>
+        <p style=" margin-bottom: auto;color:black">Last Name</p>
+        <input type="text" name="last_name" style="line-height: 30px;" value="">
+
+        <p style=" margin-bottom: auto; color:black">Confirm Password</p>
+        <input type="password" id="confirm_password" name="confirm" style="line-height: 30px;" onchange='check_pass();'
+            value="" required>
+        <span id='message'></span>
+
+        <p style=" margin-bottom: auto; color:black">Mobile</p>
+        <input type="number" name="mobile" style="line-height: 30px;" value="">
+        <center><br>
+            <input type="hidden" name="id" value="">
+            <input type="submit"
+                style="width:30%; position:absolute; margin-top:1%; margin-left:-20%; background-color: #006666;"
+                class="button button5" id="Edit_Profile" name="Edit_Profile" value="Update">
+        </center>
+        </form>
+    </div>
+    </div>
+    </div> --}}
 
     @yield('body')
     <script>

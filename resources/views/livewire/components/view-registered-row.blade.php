@@ -34,6 +34,14 @@
             </select>
         </td>
         <td>
+            <select wire:model="status" style="font-size: 15px;">
+                <option value="{{$user->status}}">{{ $user->status }}</option>
+                @if($user->status === 'Employed')
+                <option value="Dismissed">Dismissed</option>
+                @else
+                <option value="Employed">Employed</option>
+                @endif
+            </select>
         </td>
     </tr>
     @else
@@ -48,8 +56,8 @@
             <center>{{$user->position}}</center>
         </td>
         <td>
+            <center>{{$user->status}}</center>
         </td>
     </tr>
     @endif
-
 </tbody>

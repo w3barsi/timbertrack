@@ -3,10 +3,8 @@
 @endsection
 
 <div id="container">
-    <form method="POST" class="movein">
-        <input class="search__input" type="text" placeholder="Search">
-        <input type="submit" name="go_search" style="position:absolute; display:none">
-    </form>
+    {{-- <input class="search__input" type="text" placeholder="Search">
+        <input type="submit" name="go_search" style="position:absolute; display:none"> --}}
 
     <div id="container3" class="moveout">
         <table id="table-progress">
@@ -34,14 +32,14 @@
         <span class="bottom-key-2"></span>
     </button>
 
-    <div style="width:15%; height:10%;  position:absolute; margin-top:-3%">
+    {{-- <div style="width:15%; height:10%;  position:absolute; margin-top:-3%">
         <input id="flatpickr">
         <label for="flatpickr">
 
             <h1 style="cursor: pointer;margin-left:35%"> 02/20/2020 <h1>
 
         </label>
-    </div>
+    </div> --}}
 
     <livewire:order.components.create-order />
 </div>

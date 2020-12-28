@@ -20,18 +20,18 @@
             <h2>&nbsp;</h2>
 
             <p style=" margin-bottom: auto; color:black">Name</p>
-            <input type="text" wire:model.lazy="name" name="name" style="line-height: 30px;" value="{{$user->name}}">
+            <input type="text" wire:model.defer="name" name="name" style="line-height: 30px;" value="{{$user->name}}">
 
             <p style=" margin-bottom: auto; color:black">Password</p>
-            <input type="password" id="password" style="line-height: 30px;" wire:model.lazy="password" name="password"
+            <input type="password" id="password" style="line-height: 30px;" wire:model.defer="password" name="password"
                 onchange='check_pass();'>
 
             <p style=" margin-bottom: auto; color:black">Username</p>
-            <input type="text" wire:model.lazy="username" name="user" style="line-height: 30px;"
+            <input type="text" wire:model.defer="username" name="user" style="line-height: 30px;"
                 value="{{$user->username}}">
 
             <p style=" margin-bottom: auto; color:black">Email Address</p>
-            <input type="email" wire:model.lazy="email" name="email" style="line-height: 30px;"
+            <input type="email" wire:model.defer="email" name="email" style="line-height: 30px;"
                 value="{{$user->email}}">
 
         </div>
@@ -39,19 +39,19 @@
             <h2>&nbsp;</h2>
 
             <p style=" margin-bottom: auto; color:black">Mobile</p>
-            <input type="number" wire:model.lazy="mobile" name="mobile" style="line-height: 30px;"
+            <input type="number" wire:model.defer="mobile" name="mobile" style="line-height: 30px;"
                 value="{{$user->mobile}}">
 
             <p style=" margin-bottom: auto; color:black">Confirm Password</p>
-            <input type="password" id="confirm_password" wire:model.lazy="password_confirmed" name="password_confirmed"
+            <input type="password" id="confirm_password" wire:model.defer="password_confirmed" name="password_confirmed"
                 style="line-height: 30px;" onchange='check_pass();'>
             <span id='message'></span>
-
             <center><br>
                 <input type="hidden" name="id" value="">
                 <input type="submit"
                     style="width:30%; position:absolute; margin-top:1%; margin-left:-20%; background-color: #006666;"
-                    class="button button5" id="Edit_Profile" name="Edit_Profile" value="Update">
+                    class="button button5" id="Edit_Profile" name="Edit_Profile" value="Update"
+                    onclick="passwordMatchAlert()">
             </center>
             </form>
         </div>

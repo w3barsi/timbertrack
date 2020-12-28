@@ -263,6 +263,15 @@
             }
         }
 
+        function passwordMatchAlert()
+        {
+            if (document.getElementById('password').value == document.getElementById('confirm_password').value)
+            {
+                alert("Password has been updated");
+            }
+
+        }
+
         function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();

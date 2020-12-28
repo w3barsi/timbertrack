@@ -2,7 +2,7 @@
 <link href="{{asset('css/stock.css')}}" rel="stylesheet">
 @endsection
 
-<div id="container">
+<div id="container" wire:poll>
     <form wire:submit.prevent="" method="POST" class="movein">
         <input wire:model="search" class="search__input" type="text" placeholder="Search">
     </form>
@@ -15,11 +15,44 @@
                     <th style="width:15%">Available</th>
                     <th style="width:15%">Price</th>
                     <th style="width:25%">Subcategory</th>
-                    <th> </th>
+                    @if(auth()->user()->hasPosition('admin'))
+                    <th></th>
+                    @endif
                 </tr>
             </thead>
             @foreach ($stocks as $stock)
-            <livewire:stock.components.stock-page-row :stock="$stock" />
+            <tbody>
+                <tr>
+                    <td>
+                        <div onclick="location.href='{{route('Stocks.stock', $stock)}}'" style="cursor: pointer;">
+                            <center><a style="color:black; text-decoration:none"> {{ $stock->product }} </a></center>
+                        </div>
+                    </td>
+                    <td>
+                        <div onclick="location.href='{{route('Stocks.stock', $stock)}}'" style="cursor: pointer;">
+                            <center>{{ $stock->available }}</center>
+                        </div>
+                    </td>
+                    <td>
+                        <div onclick="location.href='{{route('Stocks.stock', $stock)}}'" style="cursor: pointer;">
+                            <center>{{ $stock->price }}</center>
+                        </div>
+                    </td>
+                    <td>
+                        <div onclick="location.href='{{route('Stocks.stock', $stock)}}'" style="cursor: pointer;">
+                            <center>{{ $stock->subcategory }}</center>
+                        </div>
+                    </td>
+                    @if(auth()->user()->hasPosition('admin'))
+                    <td>
+                        <input wire:click="delete({{$stock->id}})" type="submit" name="delete" value=""
+                            id="submit-icon2">
+                        <i class="fas fa-trash" style="margin-left:-23px; margin-top:5px; "> </i>
+
+                    </td>
+                    @endif
+                </tr>
+            </tbody>
             @endforeach
 
             {{-- <tr>
@@ -42,10 +75,10 @@
 
 
     <div id="categories" class="fade-in1">
-        <a class="@if($selected === 'all') selected @endif hover-shadow hover-color cursor-pointer"
+        <a class="@if($this->selected === 'all') selected @endif hover-shadow hover-color cursor-pointer"
             wire:click="selected('all')">
             <span>V</span><span>i</span><span>e</span><span>w</span> <span>A</span><span>l</span><span>l</span> </a>
-        <a class="@if($selected === 'wood') selected @endif hover-shadow hover-color cursor-pointer"
+        <a class=" @if($this->selected === 'wood') selected @endif hover-shadow hover-color cursor-pointer"
             wire:click="selected('wood')">
             <span>W</span><span>o</span><span>o</span><span>d</span> </a>
         <a class="@if($selected === 'plastic') selected @endif hover-shadow hover-color cursor-pointer"

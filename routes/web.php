@@ -5,13 +5,14 @@ use App\Http\Livewire\Order\OrderPage;
 use App\Http\Livewire\Stock\StockPage;
 use App\Http\Controllers\StockController;
 use App\Http\Livewire\Order\OrderCheckPage;
+use App\Http\Livewire\Stock\StockCheckPage;
 use App\Http\Controllers\ResupplyController;
 use App\Http\Livewire\Progress\ProgressPage;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Auth\LogoutController;
-use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Livewire\Components\ViewRegistered;
 use App\Http\Livewire\Dashboard\DashboardPage;
+use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Livewire\Components\ViewRegistered;
+use App\Http\Controllers\Auth\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,7 @@ use App\Http\Livewire\Dashboard\DashboardPage;
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/Stocks', StockPage::class)->name('Stocks');
+    Route::get('/Stocks/{stock}', StockCheckPage::class)->name('Stocks.stock');
     Route::get('/Orders', OrderPage::class)->name('Orders');
     Route::get('/Orders/{order}', OrderCheckPage::class)->name('Orders.order');
     Route::get('/Dashboard', DashboardPage::class)->name('Dashboard');

@@ -54,6 +54,8 @@ class StockCreate extends Component
             'price' => $this->price,
         ]);
         $this->display = false;
+
+        return redirect()->route('Stocks');
     }
 
     public function render()

@@ -32,13 +32,13 @@ class OrderCheckPage extends Component
         return redirect()->to('/Orders/' . $this->order->id);
     }
 
-    public function updatedPurchases()
-    {
-        $total;
-        foreach ($purchases as $key => $value) {
-            # code...
-        }
-    }
+    // public function updatedPurchases()
+    // {
+    //     $total;
+    //     foreach ($purchases as $key => $value) {
+    //         # code...
+    //     }
+    // }
 
     public function mount(Order $order)
     {

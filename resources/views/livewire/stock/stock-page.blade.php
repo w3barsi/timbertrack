@@ -104,12 +104,12 @@
         <span class="bottom-key-2"></span>
     </button>
 
-    <button class="fancy" style="margin-left:-23%; position: absolute;">
+    {{-- <button class="fancy" style="margin-left:-23%; position: absolute;">
         <span class="top-key"></span>
         <a onclick="HideShowHistory()" class="">History</a>
         <span class="bottom-key-1"></span>
         <span class="bottom-key-2"></span>
-    </button>
+    </button> --}}
 
     <div id='history'>
         <div class='log-history'>

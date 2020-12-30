@@ -27,14 +27,12 @@
     </div>
 
 
-    @if(auth()->user()->hasPosition('admin') || auth()->user()->hasPosition('cashier'))
     <button class="fancy fade-in2">
         <span class="top-key"></span>
         <a onclick="HideShowAdd()" class="">Create</a>
         <span class="bottom-key-1"></span>
         <span class="bottom-key-2"></span>
     </button>
-    @endif
 
     {{-- <div style="width:15%; height:10%;  position:absolute; margin-top:-3%">
         <input id="flatpickr">

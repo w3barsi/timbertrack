@@ -14,7 +14,9 @@
                 <th style="width:25%">Address</th>
                 <th style="width:15%">Total</th>
                 <th style="width:20%">Status</th>
+                @if(auth()->user()->hasPosition('admin') || auth()->user()->hasPosition('cashier'))
                 <th style="width:3%"></th>
+                @endif
             </tr>
             @if (count($orders) > 0)
             @foreach ($orders as $order)
@@ -25,12 +27,14 @@
     </div>
 
 
+    @if(auth()->user()->hasPosition('admin') || auth()->user()->hasPosition('cashier'))
     <button class="fancy fade-in2">
         <span class="top-key"></span>
         <a onclick="HideShowAdd()" class="">Create</a>
         <span class="bottom-key-1"></span>
         <span class="bottom-key-2"></span>
     </button>
+    @endif
 
     {{-- <div style="width:15%; height:10%;  position:absolute; margin-top:-3%">
         <input id="flatpickr">

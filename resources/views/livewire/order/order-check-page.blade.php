@@ -36,7 +36,10 @@
                         <th>Price</th>
                         <th>Quantity</th>
                         <th>Total</th>
+                        @if(auth()->user()->hasPosition('admin') || auth()->user()->hasPosition('cashier'))
                         <th></th>
+                        @endif
+
                     </tr>
                 </thead>
                 @if(isset($purchases))

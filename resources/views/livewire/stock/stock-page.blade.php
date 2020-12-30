@@ -15,7 +15,7 @@
                     <th style="width:15%">Available</th>
                     <th style="width:15%">Price</th>
                     <th style="width:25%">Subcategory</th>
-                    @if(auth()->user()->hasPosition('admin'))
+                    @if(auth()->user()->hasPosition('admin') || auth()->user()->hasPosition('checker'))
                     <th></th>
                     @endif
                 </tr>
@@ -43,7 +43,7 @@
                             <center>{{ $stock->subcategory }}</center>
                         </div>
                     </td>
-                    @if(auth()->user()->hasPosition('admin'))
+                    @if(auth()->user()->hasPosition('admin') || auth()->user()->hasPosition('checker') )
                     <td>
                         <input wire:click="delete({{$stock->id}})" type="submit" name="delete" value=""
                             id="submit-icon2">
@@ -97,12 +97,14 @@
         <livewire:stock.components.stock-create />
     </div>
 
+    @if(auth()->user()->hasPosition('Admin') || auth()->user()->hasPosition('checker'))
     <button class="fancy ">
         <span class="top-key"></span>
         <a onclick="HideShowAdd()" class="">Create</a>
         <span class="bottom-key-1"></span>
         <span class="bottom-key-2"></span>
     </button>
+    @endif
 
     {{-- <button class="fancy" style="margin-left:-23%; position: absolute;">
         <span class="top-key"></span>

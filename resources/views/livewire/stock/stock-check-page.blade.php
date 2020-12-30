@@ -19,12 +19,14 @@
         <p>&emsp; {{$stock->description}}</p>
     </div>
 
+    @if(auth()->user()->hasPosition('admin') || auth()->user()->hasPosition('checker'))
     <button id="thisEdit" class="fancy">
         <span class="top-key"></span>
         <a onclick="HideShowEdit()">Edit</a>
         <span class="bottom-key-1"></span>
         <span class="bottom-key-2"></span>
     </button>
+    @endif
 
     <form wire:submit.prevent="submit">
         <div id="showhide">

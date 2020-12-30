@@ -13,7 +13,9 @@
          from-red-500 to-red-400 hover:from-red-600 hover:to-red-500 @endif
         cursor-pointer " wire:click="status">
             {{ $purchase->total }}</td>
+        @if(auth()->user()->hasPosition('admin') || auth()->user()->hasPosition('cashier'))
         <td class="bg-black text-white cursor-pointer  hover:bg-white hover:text-black" wire:click="destroy">
             Delete</td>
+        @endif
     </tr>
 </tbody>

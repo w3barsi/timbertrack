@@ -32,9 +32,11 @@
                 @endif
             </select>
         </td>
+        @if(auth()->user()->hasPosition('admin') || auth()->user()->hasPosition('cashier'))
         <td>
             <div style="color: white; background-color: black; cursor: pointer;" wire:click="destroy">x</div>
         </td>
+        @endif
     </center>
     </tr>
 </tbody>

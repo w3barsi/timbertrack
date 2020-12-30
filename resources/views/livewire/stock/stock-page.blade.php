@@ -97,7 +97,7 @@
         <livewire:stock.components.stock-create />
     </div>
 
-    @if(auth()->user()->hasPosition('Admin') || auth()->user()->hasPosition('checker'))
+    @if(auth()->user()->hasPosition('Admin'))
     <button class="fancy ">
         <span class="top-key"></span>
         <a onclick="HideShowAdd()" class="">Create</a>

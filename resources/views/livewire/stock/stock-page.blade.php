@@ -15,7 +15,7 @@
                     <th style="width:15%">Available</th>
                     <th style="width:15%">Price</th>
                     <th style="width:25%">Subcategory</th>
-                    @if(auth()->user()->hasPosition('admin') || auth()->user()->hasPosition('checker'))
+                    @if(auth()->user()->hasposition('admin') || auth()->user()->hasposition('checker'))
                     <th></th>
                     @endif
                 </tr>
@@ -37,6 +37,7 @@
                         <div onclick="location.href='{{route('Stocks.stock', $stock)}}'" style="cursor: pointer;">
                             <center>{{ $stock->price }}</center>
                         </div>
+
                     </td>
                     <td>
                         <div onclick="location.href='{{route('Stocks.stock', $stock)}}'" style="cursor: pointer;">
@@ -55,20 +56,7 @@
             </tbody>
             @endforeach
 
-            {{-- <tr>
-                <td>
-                    <center><a style="color:black; text-decoration:none"> test 2 </a>
-                </td>
-                <form></form>
-                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="updating"
-                        maxlength='4' value='1234' /></td>
-                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    PHP <input class="updating" maxlength='4' value='0123' /></center>
-                </td>
-                <td><input type='submit' name='update' value='' id='submit-icon'> <i class='fas fa-check'
-                        style='margin-left:-20px; margin-top:5px; '></i></td>
 
-            </tr> --}}
         </table>
     </div>
 
@@ -106,16 +94,16 @@
     </button>
     @endif
 
-    {{-- <button class="fancy" style="margin-left:-23%; position: absolute;">
+    <button class="fancy" style="@if(auth()->user()->hasposition('admin') || auth()->user()->hasposition('checker')) margin-left:-23% @else margin-left:77% @endif ; position: absolute;">
         <span class="top-key"></span>
-        <a onclick="HideShowHistory()" class="">History</a>
+        <a wire:click="displayHistoryChange()" onclick="HideShowHistory()" class="">History</a>
         <span class="bottom-key-1"></span>
         <span class="bottom-key-2"></span>
-    </button> --}}
+    </button>
 
-    <div id='history'>
+    <div id='history' @if($displayHistory===true)style="display: block;" @else style="display: none;" @endif>
         <div class='log-history'>
-            <span class='exit'>&times;</span>
+            <span wire:click="displayHistoryChange()" class='exit'>&times;</span>
             <h1>HISTORY</h1>
             <table style="width: 90%; margin-left:4%">
                 <tr>
@@ -124,38 +112,44 @@
                     <th style="width:25%">Timestamp</th>
                     <th style="width:25%">Intention</th>
                 </tr>
+                @foreach ($history as $row)
                 <tr>
-                    <td>robine</td>
-                    <td>Asol</td>
-                    <td>19/12/2020 14:00</td>
-                    <td>Update/Delete/Insert</td>
+                    <td>{{ $row->user->name }}</td>
+                    <td>{{ $row->product }}</td>
+                    <td>{{ $row->created_at }}</td>
+                    <td>{{ $row->status }}</td>
                 </tr>
+                @endforeach
+
+                {{$history->links('pagination-links')}}
+                <br>
             </table>
         </div>
     </div>
+
 </div>
 
 @section('script')
 <script>
     function HideShowAdd() {
-                var x = document.getElementById("back");
-                if (x.style.display === "none") {
-                    x.style.display = "block";
-                } else {
-                    x.style.display = "none";
-                }
-            }
+        var x = document.getElementById("back");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
 
-            var square = document.getElementById('back');
-            var span = document.getElementsByClassName("close")[0];
-            span.onclick = function() {
+        var square = document.getElementById('back');
+        var span = document.getElementsByClassName("close")[0];
+        span.onclick = function() {
+            square.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == square) {
                 square.style.display = "none";
             }
-            window.onclick = function(event) {
-                if (event.target == square) {
-                    square.style.display = "none";
-                }
-            }
+        }
 
     function HideShowHistory() {
         var x = document.getElementById("history");
@@ -165,15 +159,15 @@
             x.style.display = "none";
         }
     }
-            var modal1 = document.getElementById('history');
-            var exit = document.getElementsByClassName("exit")[0];
-            exit.onclick = function() {
+        var modal1 = document.getElementById('history');
+        var exit = document.getElementsByClassName("exit")[0];
+        exit.onclick = function() {
             modal1.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == modal1) {
+                modal1.style.display = "none";
             }
-            window.onclick = function(event) {
-                if (event.target == modal1) {
-                    modal1.style.display = "none";
-                }
-            }
+        }
 </script>
 @endsection

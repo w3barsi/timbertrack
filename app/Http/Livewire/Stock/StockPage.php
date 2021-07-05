@@ -3,19 +3,31 @@
 namespace App\Http\Livewire\Stock;
 
 use App\Models\Stock;
+use App\Models\History;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class StockPage extends Component
 {
+    use WithPagination;
+
     public $selected = "all";
     public $search;
 
+    public $displayHistory = false;
+
     public $stocks;
+    // public $history;
 
     public function delete($id)
     {
         $stock = Stock::find($id);
         $stock->delete();
+    }
+
+    public function displayHistoryChange()
+    {
+        $this->displayHistory = !$this->displayHistory;
     }
 
 
@@ -59,12 +71,15 @@ class StockPage extends Component
     public function mount()
     {
         $this->stocks = Stock::orderBy('created_at', 'desc')->get();
+        // $this->history = History::orderBy('created_at', 'desc')->paginate();
     }
 
 
     public function render()
     {
-        return view('livewire.stock.stock-page')
+        return view('livewire.stock.stock-page', [
+            'history' => History::orderBy('created_at', 'desc')->paginate(2),
+        ])
             ->extends('layouts.app')
             ->section('body');
     }

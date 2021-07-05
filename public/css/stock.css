@@ -124,7 +124,6 @@ a.hover-shadow:hover {
     text-shadow: 1px 1px 0px gray, 2px 2px 0px gray, 3px 3px 0px gray;
 }
 
-
 /*button */
 
 button.fancy {
@@ -428,7 +427,6 @@ tr:hover {
     right: 0;
     bottom: 0;
     z-index: 10;
-    display: none;
 }
 
 /* add screen */
@@ -510,7 +508,6 @@ tr:hover {
     margin-left: 47.7%;
     margin-top: -0.7%;
 }
-
 
 .selected {
     background-color: transparent;

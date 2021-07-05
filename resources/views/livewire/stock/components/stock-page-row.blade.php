@@ -3,7 +3,7 @@
     @if($editable === true)
     <tr>
         <td>
-            <center><input wire:model="product" type="text" value="{{$stock->product}}"></center>
+            <center><input wire:model="available" type="number" value="{{ $stock->available }}"></center>
         </td>
         <td>
             <center><input wire:model="available" type="number" value="{{ $stock->available }}"></center>

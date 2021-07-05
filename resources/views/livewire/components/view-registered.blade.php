@@ -27,7 +27,7 @@
                 <tr>
                     <th style="">Name</th>
                     <th style="">Username</th>
-                    <th style="">Date Hired</th>
+                    <th style="">Date Registered</th>
                     <th style="">Job</th>
                     <th style="">Status</th>
                     <th> </th>

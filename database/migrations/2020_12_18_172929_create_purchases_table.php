@@ -16,8 +16,8 @@ class CreatePurchasesTable extends Migration
         Schema::create('purchases', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId('order_id')->constrained();
-            $table->foreignId('stock_id')->constrained();
+            $table->foreignId('order_id')->constrained()->onDelete('cascade');
+            $table->foreignId('stock_id')->constrained()->onDelete('cascade');
             $table->integer('quantity')->default(0);
             $table->unsignedInteger('total')->nullable();
             $table->boolean('is_prepared')->default(0);

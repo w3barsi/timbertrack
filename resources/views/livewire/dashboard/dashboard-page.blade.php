@@ -27,31 +27,27 @@
 
     <div id="piechart">
         <h2>
-            <center> Sales</center>
+            <center>Sales</center>
         </h2>
     </div>
 
-
     <div id="listofprod">
         <h2>
-            <center> Product Sales</center>
+            <center>Products</center>
         </h2>
         <table id="ListofProdTable">
             <tr>
-                <td style="width:50%">Product Name</td>
-                <td align="center">Item Sold</td>
+                <td align="center">Product Name</td>
+                <td align="center">Subcategory</td>
                 <td align="center">Unit Price</td>
-                <td align="center">Total</td>
-
             </tr>
-            <tr>
-                <td style="width:50%">Product Name</td>
-                <td align="center">25</td>
-                <td align="center">Php 30</td>
-                <td align="center">Php 750</td>
-
-            </tr>
-
+            @foreach($stocks as $stock)
+                <tr>
+                    <td align="center">{{$stock->product}}</td>
+                    <td align="center">{{$stock->subcategory}}</td>
+                    <td align="center">{{$stock->price}}</td>
+                </tr>
+            @endforeach
         </table>
     </div>
 
@@ -62,14 +58,14 @@
         <div>
             <div class="buttoncategory relative">
                 <div class="element">
-                    <p>Wood</p>
+                    <a wire:click="selected('wood')">Wood</a>
                 </div>
             </div>
         </div>
         <div>
             <div class="buttoncategory relative">
                 <div class="element">
-                    <p>Plastic</p>
+                    <a wire:click="selected('plastic')">Plastic</a>
                 </div>
             </div>
         </div>
@@ -77,27 +73,27 @@
         <div>
             <div class="buttoncategory relative">
                 <div class="element">
-                    <p>Concrete</p>
+                    <a wire:click="selected('concrete')">Concrete</a>
                 </div>
             </div>
         </div>
         <div>
             <div class="buttoncategory relative">
                 <div class="element">
-                    <p>Metal</p>
+                    <a wire:click="selected('metal')">Metal</a>
                 </div>
             </div>
         </div>
         <div>
             <div class="buttoncategory relative">
                 <div class="element">
-                    <p>Others </p>
+                    <a wire:click="selected('others')">Others</a>
                 </div>
             </div>
         </div>
     </div>
     <div id="selectedprod">
-        <h1 style="position:absolute; margin-top:6%; margin-left:2%"> Product Name</h1>
+        <h1 style="position:absolute; margin-top:6%; margin-left:2%">Product Sales</h1>
         <table id="ListofProdTable"
             style="display:inline-block; float: right; width:68%;margin-top:3%; margin-right:3%">
             <tr style="position: sticky">

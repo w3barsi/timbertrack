@@ -14,6 +14,22 @@ class DashboardPage extends Component
 
     public $stocks;
 
+    public $date;
+
+    public $day ;
+    public $month ;
+    public $year ;
+    public $weekname;
+
+    public function updatedDate(){
+
+
+        $this->day = date("d",strtotime($this->date));
+        $this->weekname = date("l",strtotime($this->date));
+        $this->month = date("F",strtotime($this->date));
+        $this->year = date("y",strtotime($this->date)) + 2000;
+    }
+
     public function selected($selected)
     {
 

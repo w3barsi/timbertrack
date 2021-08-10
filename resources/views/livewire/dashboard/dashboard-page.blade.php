@@ -4,20 +4,20 @@
 @endsection
 
 <div id="container">
-    <input id="flatpickr" id="timer"
+    <input id="flatpickr" id="timer" wire:model.lazy="date"
         style="position:absolute;   width: 13em; height: 13em; margin-left: 17%; margin-top: 3%; ">
     <label for="flatpickr">
         <i id="flatpickr" class="icon" style="margin-left: 17%; cursor:pointer;">
-            <em>Saturday</em>
-            <strong>September</strong>
-            <span>20</span>
+            <em>{{$weekname}}</em>
+            <strong>{{$month}}</strong>
+            <span>{{$day}}</span>
         </i>
     </label>
 
 
     <i class="icon" style="margin-left: 40%">
         <strong>Year</strong>
-        <span>2020</span>
+        <span>{{$year}}</span>
     </i>
     <div class="hovertimestamp"><span>Time Period</span>
         <a class="social-link" target="_blank">Day</a>

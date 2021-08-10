@@ -27,3 +27,4 @@ class ViewRegistered extends Component
             ->section('body');
     }
 }
+

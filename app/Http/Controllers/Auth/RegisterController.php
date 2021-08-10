@@ -38,12 +38,14 @@ class RegisterController extends Controller
 
     public function store(Request $req)
     {
-        
-        $validated = $req->validate([
+
+        //validate
+        $this->validate($req, [
             'name' => 'required|max:255',
             'username' => 'required|max:255',
             'email' => 'required|email|max:255',
             'password' => 'required|confirmed',
+
         ]);
 
         User::create([
@@ -54,6 +56,9 @@ class RegisterController extends Controller
             'position' => 'Admin',
         ]);
 
+        //sign-in
+        auth()->attempt($req->only('email', 'password'));
+        //redirect
         return redirect()->route('Stocks');
     }
 }

@@ -54,7 +54,7 @@
             </p>
             <p>Available&emsp;&nbsp;&nbsp; :&emsp;<input wire:model.defer="available" type="number"
                     value="{{$stock->available}}" /></p>
-            <p>Date Created :&emsp;May 26, 2000</p>
+            <p>Date Created :&emsp;{{$stock->created_at->toDateString()}}</p>
             <p>Description</p>
             <p>&emsp; <textarea wire:model.defer="description" type="textarea">{{$stock->description}}</textarea></p>
             </p>

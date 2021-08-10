@@ -27,6 +27,7 @@ class ViewRegisteredRow extends Component
 
     public function updatedName()
     {
+
         $this->user->name = $this->name;
         $this->user->save();
     }

@@ -16,8 +16,7 @@ class DashboardPage extends Component
 
     public $selected;
     public $stocks;
-
-    ////////////////DATE
+    //DATE
     public $date;
     public $day ;
     public $month ;
@@ -25,12 +24,14 @@ class DashboardPage extends Component
     public $weekname;
     public $today;
     public $chosenDate;
-    /////////////////////
-
-    ////////////PURCHASED
+    //PURCHASED
     public $purchased;
     public $pID;
-    ////////////////////
+    ///TOTAL
+    public $total;
+    public $arr;
+    public $i;
+    //
 
     public function updatedDate(){
         $this->chosenDate = $this->date;
@@ -49,14 +50,22 @@ class DashboardPage extends Component
                 ['category', '!=', 'plastic'],
                 ['category', '!=', 'metal'],
                 ['category', '!=', 'concrete'],
-            ])->orderBy('created_at', 'desc')->get();
+            ])->whereDate('created_at','=',$this->chosenDate)->orderBy('created_at', 'desc')->get();
         } else {
             $this->stocks = Stock::where('category', $selected)->orderBy('created_at', 'desc')->get();
+
+            $this->arr=array();
+
+            foreach($this->stocks as $prods){
+                $this->total = Purchase::where('stock_id',$prods->id)
+                ->whereDate('created_at', '=', $this->chosenDate)
+                ->get()->sum('total');
+                array_push($this->arr,$this->total);
+            }
         }
     }
 
     public function purchases($id){
-
         $this->pID = $id;
         $this->purchased = Purchase::where('stock_id',$id)
         ->whereDate('created_at', '=', $this->chosenDate)
@@ -65,20 +74,22 @@ class DashboardPage extends Component
 
     public function mount()
     {
+        //DATE
         $this->selected="";
         $this->today=Carbon::now();
         $this->chosenDate  = $this->today;
-
         $this->day=date("d",strtotime($this->today));
         $this->weekname=date("l",strtotime($this->today));
         $this->month=date("F",strtotime($this->today));
         $this->year=date("y",strtotime($this->today)) + 2000;
+        //STOCKS
         $this->stocks = Stock::where('category',$this->selected)->orderBy('created_at', 'desc')->get();
-
+        //PURCHASE
         $this->pID = "";
         $this->purchased = Purchase::where('stock_id',$this->pID)
         ->whereDate('created_at', '=', $this->chosenDate)
         ->get();
+        $this->i=0;
     }
 
     public function render()

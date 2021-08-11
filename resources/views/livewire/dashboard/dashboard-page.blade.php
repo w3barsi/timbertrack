@@ -40,13 +40,13 @@
             <tr>
                 <td align="center">Product Name</td>
                 <td align="center">Subcategory</td>
-                <td align="center">Unit Price</td>
+                <td align="center">Total</td>
             </tr>
             @foreach($stocks as $stock)
                 <tr>
                     <td align="center"><a wire:click="purchases('{{$stock->id}}')" style="cursor:pointer">{{$stock->product}}</a></td>
                     <td align="center"><a wire:click="purchases('{{$stock->id}}')">{{$stock->subcategory}}</a></td>
-                    <td align="center"><a wire:click="purchases('{{$stock->id}}')">{{$stock->price}}</a></td>
+                    <td align="center"><a wire:click="purchases('{{$stock->id}}')">{{$arr[$i++]}}</a></td>
                 </tr>
             @endforeach
         </table>
@@ -102,7 +102,7 @@
             <tr style="position: sticky">
                 <td align="center" style="width:29%">Date and Time</td>
                 <td align="center" style="width:29%">No. of Items</td>
-                <td align="center" style="width:29%">Total</td>
+                <td align="center" style="width:29%">Unit Price</td>
             </tr>
 
     @foreach ( $purchased as $purchase)

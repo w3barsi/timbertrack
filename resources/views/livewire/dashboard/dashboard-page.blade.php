@@ -4,8 +4,10 @@
 @endsection
 
 <div id="container">
+
     <input id="flatpickr" id="timer" wire:model.lazy="date"
         style="position:absolute;   width: 13em; height: 13em; margin-left: 17%; margin-top: 3%; ">
+
     <label for="flatpickr">
         <i id="flatpickr" class="icon" style="margin-left: 17%; cursor:pointer;">
             <em>{{$weekname}}</em>
@@ -14,17 +16,16 @@
         </i>
     </label>
 
-
     <i class="icon" style="margin-left: 40%">
         <strong>Year</strong>
         <span>{{$year}}</span>
     </i>
+
     <div class="hovertimestamp"><span>Time Period</span>
         <a class="social-link" target="_blank">Day</a>
         <a class="social-link" target="_blank">Week</a>
         <a class="social-link" target="_blank">Month</a>
         <a class="social-link" target="_blank">Year</a></div>
-
     <div id="piechart">
         <h2>
             <center>Sales</center>
@@ -43,9 +44,9 @@
             </tr>
             @foreach($stocks as $stock)
                 <tr>
-                    <td align="center">{{$stock->product}}</td>
-                    <td align="center">{{$stock->subcategory}}</td>
-                    <td align="center">{{$stock->price}}</td>
+                    <td align="center"><a wire:click="purchases('{{$stock->id}}')">{{$stock->product}}</a></td>
+                    <td align="center"><a wire:click="purchases('{{$stock->id}}')">{{$stock->subcategory}}</a></td>
+                    <td align="center"><a wire:click="purchases('{{$stock->id}}')">{{$stock->price}}</a></td>
                 </tr>
             @endforeach
         </table>
@@ -97,41 +98,17 @@
         <table id="ListofProdTable"
             style="display:inline-block; float: right; width:68%;margin-top:3%; margin-right:3%">
             <tr style="position: sticky">
-                <td align="center" style="width:29%">Date</td>
-                <td align="center" style="width:29%">Time</td>
+                <td align="center" style="width:29%">Date and Time</td>
                 <td align="center" style="width:29%">No. of Items</td>
                 <td align="center" style="width:29%">Total</td>
             </tr>
-            <tr>
-                <td align="center" style="width:29%">02/05/2020</td>
-                <td align="center" style="width:29%">11:49:00</td>
-                <td align="center" style="width:29%">25</td>
-                <td align="center" style="width:29%">750</td>
-            </tr>
-            <tr>
-                <td align="center" style="width:29%">02/05/2020</td>
-                <td align="center" style="width:29%">11:49:00</td>
-                <td align="center" style="width:29%">25</td>
-                <td align="center" style="width:29%">750</td>
-            </tr>
-            <tr>
-                <td align="center" style="width:29%">02/05/2020</td>
-                <td align="center" style="width:29%">11:49:00</td>
-                <td align="center" style="width:29%">25</td>
-                <td align="center" style="width:29%">750</td>
-            </tr>
-            <tr>
-                <td align="center" style="width:29%">02/05/2020</td>
-                <td align="center" style="width:29%">11:49:00</td>
-                <td align="center" style="width:29%">25</td>
-                <td align="center" style="width:29%">750</td>
-            </tr>
-            <tr>
-                <td align="center" style="width:29%">02/05/2020</td>
-                <td align="center" style="width:29%">11:49:00</td>
-                <td align="center" style="width:29%">25</td>
-                <td align="center" style="width:29%">750</td>
-            </tr>
+             @foreach ( $purchased as $purchase)
+                <tr>
+                    <td align="center" style="width:29%">{{ $purchase->created_at }}</td>
+                    <td align="center" style="width:29%">{{ $purchase->quantity }}</td>
+                    <td align="center" style="width:29%">{{ $purchase->total }}</td>
+                </tr>
+            @endforeach
         </table>
     </div>
     <br>

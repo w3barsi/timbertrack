@@ -7,8 +7,22 @@ use Livewire\Component;
 
 class ViewRegistered extends Component
 {
+    public $selected;
     public $users;
     public $search;
+
+    public function selected($selected)
+    {
+        $this->selected = $selected;
+
+        if ($this->selected === 'all') {
+            $this->users = User::orderBy('created_at', "desc")->get();
+        } else {
+            $this->users = User::where('status', $selected)->orderBy('created_at', "desc")->get();
+        }
+
+
+    }
 
     public function updatedSearch()
     {

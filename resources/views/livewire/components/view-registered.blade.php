@@ -9,14 +9,15 @@
     </form>
     <center>
         <div id="categories">
-            <div id="selectedCategory"> </div>
-            <a class="hover-shadow hover-color">
+
+            <a class="@if($this->selected === 'Employed') selected @endif hover-shadow hover-color" wire:click="selected('Employed')">
                 <span>E</span><span>m</span><span>p</span><span>l</span><span>o</span><span>y</span><span>e</span><span>d</span>
             </a>
-            <a class="hover-shadow hover-color"> <span>V</span><span>i</span><span>e</span><span>w</span>
+            <a class="@if($this->selected === 'all') selected @endif hover-shadow hover-color" wire:click="selected('all') "> <span>V</span><span>i</span><span>e</span><span>w</span>
                 <span>A</span><span>l</span><span>l</span> </a>
             <a
-                class="hover-shadow hover-color"><span>D</span><span>i</span><span>s</span><span>m</span><span>i</span><span>s</span><span>s</span><span>e</span><span>d</span></a>
+                class=" @if($this->selected === 'Dismissed') selected @endif hover-shadow hover-color" wire:click="selected('Dismissed')"><span>D</span><span>i</span><span>s</span><span>m</span><span>i</span><span>s</span><span>s</span><span>e</span><span>d</span></a>
+
 
 
         </div>

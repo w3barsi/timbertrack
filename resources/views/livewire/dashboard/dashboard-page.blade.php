@@ -44,7 +44,7 @@
             </tr>
             @foreach($stocks as $stock)
                 <tr>
-                    <td align="center"><a wire:click="purchases('{{$stock->id}}')">{{$stock->product}}</a></td>
+                    <td align="center"><a wire:click="purchases('{{$stock->id}}')" style="cursor:pointer">{{$stock->product}}</a></td>
                     <td align="center"><a wire:click="purchases('{{$stock->id}}')">{{$stock->subcategory}}</a></td>
                     <td align="center"><a wire:click="purchases('{{$stock->id}}')">{{$stock->price}}</a></td>
                 </tr>
@@ -94,7 +94,9 @@
         </div>
     </div>
     <div id="selectedprod">
+
         <h1 style="position:absolute; margin-top:6%; margin-left:2%">Product Sales</h1>
+
         <table id="ListofProdTable"
             style="display:inline-block; float: right; width:68%;margin-top:3%; margin-right:3%">
             <tr style="position: sticky">
@@ -102,7 +104,9 @@
                 <td align="center" style="width:29%">No. of Items</td>
                 <td align="center" style="width:29%">Total</td>
             </tr>
-             @foreach ( $purchased as $purchase)
+
+    @foreach ( $purchased as $purchase)
+
                 <tr>
                     <td align="center" style="width:29%">{{ $purchase->created_at }}</td>
                     <td align="center" style="width:29%">{{ $purchase->quantity }}</td>

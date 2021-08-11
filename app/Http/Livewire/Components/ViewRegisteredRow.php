@@ -2,16 +2,18 @@
 
 namespace App\Http\Livewire\Components;
 
+use App\Models\User;
 use Livewire\Component;
 
 class ViewRegisteredRow extends Component
 {
     public $user;
-
     public $name;
     public $username;
     public $position;
     public $status;
+
+
 
     public function updatedUsername()
     {

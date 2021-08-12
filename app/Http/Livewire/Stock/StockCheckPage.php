@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Stock;
 use App\Models\History;
 use App\Models\Stock;
 use Livewire\Component;
+use App\Models\Purchase;
 
 class StockCheckPage extends Component
 {
@@ -16,6 +17,13 @@ class StockCheckPage extends Component
     public $price;
     public $available;
     public $description;
+
+    ////All Purchases
+
+    public $purchases;
+
+
+    ///
 
     public function submit()
     {
@@ -46,6 +54,10 @@ class StockCheckPage extends Component
         $this->price = $stock->price;
         $this->available = $stock->available;
         $this->description = $stock->description;
+
+
+        $this->purchases = Purchase::where('stock_id',$stock->id)->get();
+
     }
     public function render()
     {

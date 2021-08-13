@@ -29,6 +29,32 @@
     <div id="piechart">
         <h2>
             <center>Sales</center>
+            <table id="ListofProdTable">
+                <tr>
+                    <td align="center">Category</td>
+                    <td align="center">Total</td>
+                </tr>
+                <tr>
+                    <td align="center">Wood</td>
+                    <td align="center">{{ $wood }}</td>
+                <tr>
+                <tr>
+                    <td align="center">Plastic</td>
+                    <td align="center">{{ $plastic }}</td>
+                <tr>
+                <tr>
+                    <td align="center">Concrete</td>
+                    <td align="center">{{ $concrete }}</td>
+                <tr>
+                <tr>
+                    <td align="center">Metal</td>
+                    <td align="center">{{ $metal }}</td>
+                <tr>
+                <tr>
+                    <td align="center">Others</td>
+                    <td align="center">{{ $others }}</td>
+                <tr>
+            </table>
         </h2>
     </div>
 

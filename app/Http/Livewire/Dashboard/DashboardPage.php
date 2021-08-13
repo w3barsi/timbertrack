@@ -38,7 +38,6 @@ class DashboardPage extends Component
     public $metal;
     public $others;
 
-
     public function updatedDate(){
         $this->chosenDate = $this->date;
         $this->day = date("d",strtotime($this->date));
@@ -103,7 +102,7 @@ class DashboardPage extends Component
             array_push($concreteArray,$purchase);
         }
 
-        foreach($concreteArray as $conrete){
+        foreach($concreteArray as $concrete){
             $this->concrete+=$concrete;
         }     
 
@@ -241,7 +240,7 @@ class DashboardPage extends Component
             array_push($concreteArray,$purchase);
         }
 
-        foreach($concreteArray as $conrete){
+        foreach($concreteArray as $concrete){
             $this->concrete+=$concrete;
         }     
 

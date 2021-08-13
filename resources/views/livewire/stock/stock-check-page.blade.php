@@ -4,6 +4,27 @@
 
 <div id="container">
     <div id="container3">
+
+        <table id="ListofProdTable"
+            style="display:inline-block; float: right; width:68%;margin-top:3%; margin-right:3%">
+            <tr style="position: sticky">
+                @if ($purchases->isEmpty()==null)
+                    <td align="center" style="width:29%">Date and Time</td>
+                    <td align="center" style="width:29%">No. of Items</td>
+                    <td align="center" style="width:29%">Unit Price</td>              
+                @else
+                    <p>EMPTY</p>
+                @endif
+
+            </tr>
+            @foreach ($purchases as $purchase) 
+                    <tr>
+                        <td align="center" style="width:29%">{{ $purchase->created_at }}</td>
+                        <td align="center" style="width:29%">{{ $purchase->quantity }}</td>
+                        <td align="center" style="width:29%">{{ $purchase->total }}</td>
+                    </tr>
+            @endforeach
+        </table>
         {{-- Can u add graph chart , year sale (January-December) of currrent year --}}
     </div>
     <img src="{{ asset('img/img_avatar.png') }}" id="img20" alt="Avatar">
@@ -14,7 +35,7 @@
         <p>Subcategory : &emsp;{{$stock->subcategory}}</p>
         <p>Price &emsp;&emsp;&emsp; : &emsp;Php {{$stock->price}}</p>
         <p>Available&emsp;&nbsp;&nbsp; :&emsp;{{$stock->available}}</p>
-        <p>Date Created :&emsp;{{$stock->created_at->toDateString()}}</p>
+        {{-- <p>Date Created :&emsp;{{$stock->created_at->toDateString()}}</p> --}}
         <p>Description</p>
         <p>&emsp; {{$stock->description}}</p>
     </div>
@@ -54,7 +75,7 @@
             </p>
             <p>Available&emsp;&nbsp;&nbsp; :&emsp;<input wire:model.defer="available" type="number"
                     value="{{$stock->available}}" /></p>
-            <p>Date Created :&emsp;{{$stock->created_at->toDateString()}}</p>
+            {{-- <p>Date Created :&emsp;{{$stock->created_at->toDateString()}}</p> --}}
             <p>Description</p>
             <p>&emsp; <textarea wire:model.defer="description" type="textarea">{{$stock->description}}</textarea></p>
             </p>

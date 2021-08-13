@@ -31,7 +31,13 @@ class DashboardPage extends Component
     public $total;
     public $arr;
     public $i;
-    //
+    //SALES
+    public $wood;
+    public $plastic;
+    public $concrete;
+    public $metal;
+    public $others;
+
 
     public function updatedDate(){
         $this->chosenDate = $this->date;
@@ -39,6 +45,94 @@ class DashboardPage extends Component
         $this->weekname = date("l",strtotime($this->date));
         $this->month = date("F",strtotime($this->date));
         $this->year = date("y",strtotime($this->date)) + 2000;
+
+
+        //SALES
+        $this->wood=0;
+        $this->plastic=0;
+        $this->concrete=0;
+        $this->metal=0;
+        $this->others=0;
+
+        $wood = Stock::where('category','wood')->get('id')->toArray();
+        $plastic = Stock::where('category','plastic')->get('id')->toArray();
+        $concrete = Stock::where('category','concrete')->get('id')->toArray();
+        $metal = Stock::where('category','metal')->get('id')->toArray();
+        $others = Stock::where('category','others')->get('id')->toArray();
+
+        $purchase;
+
+        $woodArray = array();
+        $plasticArray = array();
+        $concreteArray = array();
+        $metalArray = array();
+        $othersArray = array();
+
+        //WOOD
+        foreach($wood as $stock =>$id){
+            $purchase = Purchase::where('stock_id',$id)
+            ->whereDate('created_at','=',$this->chosenDate)
+            ->get('total')
+            ->sum('total');
+            array_push($woodArray,$purchase);
+        }
+
+        foreach($woodArray as $wood){
+            $this->wood+=$wood;
+        }
+
+        //PLASTIC
+        foreach($plastic as $stock =>$id){
+            $purchase = Purchase::where('stock_id',$id)
+            ->whereDate('created_at','=',$this->chosenDate)
+            ->get('total')
+            ->sum('total');
+            array_push($plasticArray,$purchase);
+        }
+
+        foreach($plasticArray as $plastic){
+            $this->plastic+=$plastic;
+        }
+
+        //CONCRETE
+        foreach($concrete as $stock =>$id){
+            $purchase = Purchase::where('stock_id',$id)
+            ->whereDate('created_at','=',$this->chosenDate)
+            ->get('total')
+            ->sum('total');
+            array_push($concreteArray,$purchase);
+        }
+
+        foreach($concreteArray as $conrete){
+            $this->concrete+=$concrete;
+        }     
+
+        //METAL
+        foreach($metal as $stock =>$id){
+            $purchase = Purchase::where('stock_id',$id)
+            ->whereDate('created_at','=',$this->chosenDate)
+            ->get('total')
+            ->sum('total');
+            array_push($metalArray,$purchase);
+        }
+
+        foreach($metalArray as $metal){
+            $this->metal+=$metal;
+        }
+
+        //OTHERS
+        foreach($others as $stock =>$id){
+            $purchase = Purchase::where('stock_id',$id)
+            ->whereDate('created_at','=',$this->chosenDate)
+            ->get('total')
+            ->sum('total');
+            array_push($othersArray,$purchase);
+        }
+
+        foreach($othersArray as $others){
+            $this->others+=$others;
+        }
+
     }
 
     public function selected($selected)
@@ -90,6 +184,93 @@ class DashboardPage extends Component
         ->whereDate('created_at', '=', $this->chosenDate)
         ->get();
         $this->i=0;
+
+        //SALES 
+        $this->wood=0;
+        $this->plastic=0;
+        $this->concrete=0;
+        $this->metal=0;
+        $this->others=0;
+
+        $wood = Stock::where('category','wood')->get('id')->toArray();
+        $plastic = Stock::where('category','plastic')->get('id')->toArray();
+        $concrete = Stock::where('category','concrete')->get('id')->toArray();
+        $metal = Stock::where('category','metal')->get('id')->toArray();
+        $others = Stock::where('category','others')->get('id')->toArray();
+
+        $purchase;
+
+        $woodArray = array();
+        $plasticArray = array();
+        $concreteArray = array();
+        $metalArray = array();
+        $othersArray = array();
+
+        //WOOD
+        foreach($wood as $stock =>$id){
+            $purchase = Purchase::where('stock_id',$id)
+            ->whereDate('created_at','=',$this->chosenDate)
+            ->get('total')
+            ->sum('total');
+            array_push($woodArray,$purchase);
+        }
+
+        foreach($woodArray as $wood){
+            $this->wood+=$wood;
+        }
+
+        //PLASTIC
+        foreach($plastic as $stock =>$id){
+            $purchase = Purchase::where('stock_id',$id)
+            ->whereDate('created_at','=',$this->chosenDate)
+            ->get('total')
+            ->sum('total');
+            array_push($plasticArray,$purchase);
+        }
+
+        foreach($plasticArray as $plastic){
+            $this->plastic+=$plastic;
+        }
+
+        //CONCRETE
+        foreach($concrete as $stock =>$id){
+            $purchase = Purchase::where('stock_id',$id)
+            ->whereDate('created_at','=',$this->chosenDate)
+            ->get('total')
+            ->sum('total');
+            array_push($concreteArray,$purchase);
+        }
+
+        foreach($concreteArray as $conrete){
+            $this->concrete+=$concrete;
+        }     
+
+        //METAL
+        foreach($metal as $stock =>$id){
+            $purchase = Purchase::where('stock_id',$id)
+            ->whereDate('created_at','=',$this->chosenDate)
+            ->get('total')
+            ->sum('total');
+            array_push($metalArray,$purchase);
+        }
+
+        foreach($metalArray as $metal){
+            $this->metal+=$metal;
+        }
+
+        //OTHERS
+        foreach($others as $stock =>$id){
+            $purchase = Purchase::where('stock_id',$id)
+            ->whereDate('created_at','=',$this->chosenDate)
+            ->get('total')
+            ->sum('total');
+            array_push($othersArray,$purchase);
+        }
+
+        foreach($othersArray as $others){
+            $this->others+=$others;
+        }
+
     }
 
     public function render()

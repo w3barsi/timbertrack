@@ -37,6 +37,8 @@ class DashboardPage extends Component
     public $concrete;
     public $metal;
     public $others;
+    //OVERALL
+    public $overall;
 
     public function updatedDate(){
 
@@ -133,6 +135,8 @@ class DashboardPage extends Component
             $this->others+=$others;
         }
 
+        $this->overall = $this->wood + $this->plastic + $this->concrete + $this->metal + $this->others;
+
     }
 
     public function selected($selected)
@@ -145,7 +149,7 @@ class DashboardPage extends Component
                 ['category', '!=', 'plastic'],
                 ['category', '!=', 'metal'],
                 ['category', '!=', 'concrete'],
-            ])->whereDate('created_at','=',$this->chosenDate)->orderBy('created_at', 'desc')->get();
+            ])->orderBy('created_at', 'desc')->get();
         } else {
             $this->stocks = Stock::where('category', $selected)->orderBy('created_at', 'desc')->get();
         }
@@ -270,6 +274,8 @@ class DashboardPage extends Component
         foreach($othersArray as $others){
             $this->others+=$others;
         }
+
+        $this->overall = $this->wood + $this->plastic + $this->concrete + $this->metal + $this->others;
     }
 
     public function render()

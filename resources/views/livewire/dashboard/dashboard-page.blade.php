@@ -21,11 +21,10 @@
         <span>{{$year}}</span>
     </i>
 
-    <div class="hovertimestamp"><span>Time Period</span>
-        <a class="social-link" target="_blank">Day</a>
-        <a class="social-link" target="_blank">Week</a>
-        <a class="social-link" target="_blank">Month</a>
-        <a class="social-link" target="_blank">Year</a></div>
+    <div class="hovertimestamp"><span>Total Sales</span>
+        <a class="social-link" target="_blank">{{ $overall }}</a>
+        <a class="social-link" target="_blank">PHP</a>
+    </div>
     <div id="piechart">
         <h2>
             <center>Sales</center>

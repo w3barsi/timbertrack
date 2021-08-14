@@ -39,12 +39,12 @@ class DashboardPage extends Component
     public $others;
 
     public function updatedDate(){
+
         $this->chosenDate = $this->date;
         $this->day = date("d",strtotime($this->date));
         $this->weekname = date("l",strtotime($this->date));
         $this->month = date("F",strtotime($this->date));
         $this->year = date("y",strtotime($this->date)) + 2000;
-
 
         //SALES
         $this->wood=0;
@@ -57,7 +57,8 @@ class DashboardPage extends Component
         $plastic = Stock::where('category','plastic')->get('id')->toArray();
         $concrete = Stock::where('category','concrete')->get('id')->toArray();
         $metal = Stock::where('category','metal')->get('id')->toArray();
-        $others = Stock::where('category','others')->get('id')->toArray();
+        $others = Stock::where([['category', '!=', 'wood'],['category', '!=', 'plastic'],['category', '!=', 'metal'],['category', '!=', 'concrete'],])
+        ->get('id')->toArray();
 
         $purchase;
 
@@ -136,6 +137,7 @@ class DashboardPage extends Component
 
     public function selected($selected)
     {
+        $this->arr=array();
         $this->selected = $selected;
         if ($this->selected === 'others') {
             $this->stocks = Stock::where([
@@ -146,15 +148,13 @@ class DashboardPage extends Component
             ])->whereDate('created_at','=',$this->chosenDate)->orderBy('created_at', 'desc')->get();
         } else {
             $this->stocks = Stock::where('category', $selected)->orderBy('created_at', 'desc')->get();
+        }
 
-            $this->arr=array();
-
-            foreach($this->stocks as $prods){
-                $this->total = Purchase::where('stock_id',$prods->id)
-                ->whereDate('created_at', '=', $this->chosenDate)
-                ->get()->sum('total');
-                array_push($this->arr,$this->total);
-            }
+        foreach($this->stocks as $prods){
+            $this->total = Purchase::where('stock_id',$prods->id)
+            ->whereDate('created_at', '=', $this->chosenDate)
+            ->get()->sum('total');
+            array_push($this->arr,$this->total);
         }
     }
 
@@ -167,6 +167,7 @@ class DashboardPage extends Component
 
     public function mount()
     {
+        $this->i=0;
         //DATE
         $this->selected="";
         $this->today=Carbon::now();
@@ -182,7 +183,6 @@ class DashboardPage extends Component
         $this->purchased = Purchase::where('stock_id',$this->pID)
         ->whereDate('created_at', '=', $this->chosenDate)
         ->get();
-        $this->i=0;
 
         //SALES 
         $this->wood=0;
@@ -195,7 +195,8 @@ class DashboardPage extends Component
         $plastic = Stock::where('category','plastic')->get('id')->toArray();
         $concrete = Stock::where('category','concrete')->get('id')->toArray();
         $metal = Stock::where('category','metal')->get('id')->toArray();
-        $others = Stock::where('category','others')->get('id')->toArray();
+        $others = Stock::where([['category', '!=', 'wood'],['category', '!=', 'plastic'],['category', '!=', 'metal'],['category', '!=', 'concrete'],])
+        ->get('id')->toArray();
 
         $purchase;
 
@@ -269,7 +270,6 @@ class DashboardPage extends Component
         foreach($othersArray as $others){
             $this->others+=$others;
         }
-
     }
 
     public function render()

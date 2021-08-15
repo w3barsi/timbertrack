@@ -8,7 +8,6 @@ use App\Models\Order;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\DB;
 
 class DashboardPage extends Component
 {

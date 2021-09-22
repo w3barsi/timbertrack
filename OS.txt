@@ -485,7 +485,8 @@ Research Assignment II
 Recall
 
 1.	What is Multiprogramming and Multitasking?
-Multiprogramming and Multitasking helps in CPU utilization, where it organizes programs for the CPU to work efficiently. This is usually seen where multiple processes or tasks are executed simultaneously.
+Multiprogramming and Multitasking helps in CPU utilization, where it organizes programs for the CPU to work efficiently. 
+This is usually seen where multiple processes or tasks are executed simultaneously.
 
 2.	What is Dual Mode Operation?
 A dual mode operation is a concept wherein modes can be extended between modes. It ensures proper execution of processes for the operating system.
@@ -497,11 +498,22 @@ Advance Research
 
 1.	Computing Environments
 •	Traditional Computing
-Traditional Computing is the use of physical computers for storing digital assets, such as physical data centers running a complete networking system for daily operations. It is more on the transmission of different servers locally, and takes place on physical hard drives and website servers, and data can only be accessed through the system in wherein the data was stored.
+Traditional Computing is the use of physical computers for storing digital assets, such as physical data centers running a complete networking system for daily operations. 
+It is more on the transmission of different servers locally, and takes place on physical hard drives and website servers, 
+and data can only be accessed through the system in wherein the data was stored.
 •	Mobile Computing
-Mobile Computing are devices and software that enable wireless access to services, such as transporting and transmission data, videos, or any kind of media using mobile devices such as smart phones or laptops.
+Mobile Computing are devices and software that enable wireless access to services, 
+such as transporting and transmission data, videos, 
+or any kind of media using mobile devices such as smart phones or laptops.
 •	Cloud Computing
-Cloud Computing is the utilization of the delivery of computing services, such as servers, storage, databases, and networking. It is the on-demand availability of computer system resources, such as storing and accessing data and programs over the internet instead of using your computer for storing such things. 
+Cloud Computing is the utilization of the delivery of computing services, such as servers, storage, databases, and networking. 
+It is the on-demand availability of computer system resources, such as storing and accessing data and programs over the internet 
+instead of using your computer for storing such things. 
 
 2.	Open-Source Operating Systems
-Open-source operating systems are openly distributed program code, and are free of charge, and allows users to modify or utilize these kinds of operating systems without restriction. These open-source operating systems are more flexible when it comes to rules and restrictions, as it allows corporations or companies and even developers to impose certain licenses to protect the integrity of the open-source code. Open-source operating systems has its advantages, such as its constant improvement, for there are many developers that can Implement new features and such. And as stated before, the code can be modified and to be configured to our own liking with our own specific needs. More importantly, open-source is free, and is always becoming better and better. There are a lot of examples regarding open-source operating systems, such as Linux when it comes to computers, and Android when it comes to mobile phones.
+Open-source operating systems are openly distributed program code, and are free of charge, and allows users to modify or utilize these kinds of operating systems without restriction. 
+These open-source operating systems are more flexible when it comes to rules and restrictions, as it allows corporations or companies and even developers to impose certain licenses to protect the integrity of the open-source code. 
+Open-source operating systems has its advantages, such as its constant improvement, for there are many developers that can Implement new features and such. 
+And as stated before, the code can be modified and to be configured to our own liking with our own specific needs. 
+More importantly, open-source is free, and is always becoming better and better. 
+There are a lot of examples regarding open-source operating systems, such as Linux when it comes to computers, and Android when it comes to mobile phones.

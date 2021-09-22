@@ -430,3 +430,78 @@ Software designers for Android devices develop applications in the Java language
 Google has designed a separate Android API for Java development.
 
 Android is similar to iOS in that it is a layered stack of software that provides a rich set of frameworks supporting graphics, audio, and hardware features.
+
+==============================================================================================================================================================================
+ASSIGNMENTS===================================================================================================================================================================
+Research Assignment 1
+
+Recall 
+1. In simple terms and in your own words, What happens during an interrupt? 
+An interrupt is a signal from an input/output device that gives a request to the CPU, which then processes this request and gives an output.
+
+2. What is the memory hierarchy? Identify and rank the memory storage in the hierarchy based on the storage capacity and CPU access time.
+  The memory hierarchy is a basis of computer architecture on how the Operating Systems responds to different types of computer storage. The higher in the hierarchy, the smaller the storage capacity and faster the access time, and vice versa.
+Memory Hierarchy
+Primary Storage	
+
+Volatile Storage	 
+The higher in the hierarchy, the smaller the storage capacity, and faster the CPU access time.
+1.	Registers
+2.	Cache
+3.	Main Memory			
+Secondary Storage	
+
+Nonvolatile Storage		
+4.	Nonvolatile Memory			
+5.	Hard-disk drives			The lower in the hierarchy, the larger the storage capacity, and slower the CPU access time.
+Tertiary Storage			
+6.	Optical disk			
+7.	Magnetic tapes			
+  
+3. Why is I/O device management in Operating Systems? 
+Because I/O device management is the only way that users can interact and communicate with the computer. Without this kind management, computers wouldn’t be able to give information out of its system without any instructions given by the user with the help of I/O devices.
+
+Advance Research
+ Computer Architecture 
+•	Single Processor Systems 
+ Single processor systems only contain one processor. With this, processes can be executed one at a time.
+•	Multi-Processor Systems 
+ Multi-Processor systems contain two or more processors. With this, multiple processes can be executed simultaneously.
+•	Clustered Systems
+  Clustered systems are a combination of hardware and software clusters. These clusters share storage, and works together as a whole. 
+Operating System operations
+•	Multi Programming/Multi Tasking
+ Multi Programming/Multi Tasking is when computers run more than one program at a time, such as doing more than one task simultaneously. 
+•	Dual mode and Multi mode operation
+ Dual mode and multi mode operations ensure proper execution of processes for the operating system, because an error in a program would widely affect other processes that are running. Dual mode has the following modes which are: User mode, where the operating system is handling an application that a user is handling, and the Kernel mode, where the operating system handles itself, where it also executes applications in user mode that are however, privileged and some of these applications may not be accessed by the user. Multi mode operations are only in systems that support virtualization, such as running a virtual machine, and a virtualization management software is used to handle this.
+•	Timer
+ Timers in operating systems are set to interrupt the CPU after a specific period of time, which is usually used to prevent user programs from running too long.
+
+==============================================================================================================================================================================
+ASSIGNMENTS===================================================================================================================================================================
+Research Assignment 2
+
+Research Assignment II
+Recall
+
+1.	What is Multiprogramming and Multitasking?
+Multiprogramming and Multitasking helps in CPU utilization, where it organizes programs for the CPU to work efficiently. This is usually seen where multiple processes or tasks are executed simultaneously.
+
+2.	What is Dual Mode Operation?
+A dual mode operation is a concept wherein modes can be extended between modes. It ensures proper execution of processes for the operating system.
+
+3.	List some resources that an operating system manages.
+Some resources that an operating system manages include:
+ Processes, Memory, File-Systems, Mass-storage, and Cache
+Advance Research
+
+1.	Computing Environments
+•	Traditional Computing
+Traditional Computing is the use of physical computers for storing digital assets, such as physical data centers running a complete networking system for daily operations. It is more on the transmission of different servers locally, and takes place on physical hard drives and website servers, and data can only be accessed through the system in wherein the data was stored.
+•	Mobile Computing
+Mobile Computing are devices and software that enable wireless access to services, such as transporting and transmission data, videos, or any kind of media using mobile devices such as smart phones or laptops.
+•	Cloud Computing
+Cloud Computing is the utilization of the delivery of computing services, such as servers, storage, databases, and networking. It is the on-demand availability of computer system resources, such as storing and accessing data and programs over the internet instead of using your computer for storing such things. 
+
+2.	Open-Source Operating Systems
+Open-source operating systems are openly distributed program code, and are free of charge, and allows users to modify or utilize these kinds of operating systems without restriction. These open-source operating systems are more flexible when it comes to rules and restrictions, as it allows corporations or companies and even developers to impose certain licenses to protect the integrity of the open-source code. Open-source operating systems has its advantages, such as its constant improvement, for there are many developers that can Implement new features and such. And as stated before, the code can be modified and to be configured to our own liking with our own specific needs. More importantly, open-source is free, and is always becoming better and better. There are a lot of examples regarding open-source operating systems, such as Linux when it comes to computers, and Android when it comes to mobile phones.

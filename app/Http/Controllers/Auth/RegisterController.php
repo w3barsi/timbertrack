@@ -24,7 +24,7 @@ class RegisterController extends Controller
         $email = $first_name . $last_name . '@gmail.com';
 
         $position = $request->position === null ? 'Employee' : $request->position;
-
+        
         User::create([
             'name' => $name,
             'username' => $username,
@@ -42,8 +42,8 @@ class RegisterController extends Controller
         //validate
         $this->validate($req, [
             'name' => 'required|max:255',
-            'username' => 'required|max:255',
-            'email' => 'required|email|max:255',
+            'username' => 'required|unique:users,username|max:255',
+            'email' => 'required|email|unique:users,email|max:255',
             'password' => 'required|confirmed',
 
         ]);

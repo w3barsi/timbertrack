@@ -13,6 +13,9 @@
 <body>
     <center>
         <h1> Login </h1>
+        @if($errors->any())
+            <h6 style="color: red;">{{$errors->first()}}</h6>
+        @endif
         <form action="{{    route('login')  }}" method="post">
             <center>
                 {{ csrf_field() }}

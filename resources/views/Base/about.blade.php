@@ -11,10 +11,10 @@
                 for people to build their houses <br>and other structures. You can start building your dreams at Tony’s Lumber and
                 Construction Supply.</p>
 
-            <p style="font-size: 60px; color:black; margin-top: 5%; margin-bottom: 0%;">what drives us</p>
-            <p style="font-size: 24px; color:white; margin-top: 0%; margin-bottom: 0%;">our team decided to create a management mechanism for a lumber business</p>
-            <p style="font-size: 60px; color:black; margin-top: 2%; margin-bottom: 0%;">who we are</p>
-            <p style="font-size: 24px; color:white; margin-top: 0%; margin-bottom: 0%;">we are students FORCED to make a website ./.</p>
+            <p style="font-size: 60px; color:black; margin-top: 5%; margin-bottom: 0%;">What drives us</p>
+            <p style="font-size: 24px; color:white; margin-top: 0%; margin-bottom: 0%;">Our team decided to create a management mechanism for a lumber business</p>
+            <p style="font-size: 60px; color:black; margin-top: 2%; margin-bottom: 0%;">Who we are</p>
+            <p style="font-size: 24px; color:white; margin-top: 0%; margin-bottom: 0%;">We are students wanting to achieve an efficient way in running a business for the company</p>
         </div>
 
 @endsection

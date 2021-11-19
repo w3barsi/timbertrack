@@ -263,7 +263,7 @@
 
         function passwordMatchAlert()
         {
-            if (document.getElementById('password').value == document.getElementById('confirm_password').value)
+            if (document.getElementById('password').value != "" && document.getElementById('password').value == document.getElementById('confirm_password').value)
             {
                 alert("Password has been updated");
             }

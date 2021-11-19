@@ -10,10 +10,9 @@
             supplies and keeps track of the finance and progress of a work</p>
     </center>
 </div>
-<div class="vl fade-in"></div>
 
 <a onclick="HideShow()" class="cta fade-out ">
-    <span>GET STARTED</span>
+    <span>LOGIN</span>
     <svg width="13px" height="10px" viewBox="0 0 13 10">
         <path d="M1,5 L11,5"></path>
         <polyline points="8 1 12 5 8 9"></polyline>
@@ -21,7 +20,7 @@
 </a>
 
 
-<div id='back' @if($login===true)style="display: block" @endif>
+<div id='back' style="display: {{session('status') ? 'block' : 'none'}}">
     <div class='login'>
         <span class='close'>&times;</span>
         <h1>Login</h1>
@@ -30,7 +29,8 @@
             <label for='username'>
                 <i class='fas fa-user'></i>
             </label>
-            <input type='text' name='username' placeholder='Username' required>
+            <input type='text' name='username' placeholder='Username' required
+            value="{{ old('username') }}">
             <label for='password'>
                 <i class='fas fa-lock'></i>
             </label>

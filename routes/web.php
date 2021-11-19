@@ -50,7 +50,8 @@ Route::get('/login', function () {
 })->name('login');
 
 Route::get('/', function () {
-    return view('Base/index');
+    //return view('Base/index');
+    return view('Base/index-login', ['login' => true]);
 })->name('index');
 
 

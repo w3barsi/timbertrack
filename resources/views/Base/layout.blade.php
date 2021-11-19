@@ -29,7 +29,7 @@
                 <a href="{{ url('Contact') }}"> CONTACT</a>
             </div>
             @yield('body')
-
+        </center>
     </div>
     <script>
         var modal = document.getElementById('back');

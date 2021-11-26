@@ -31,8 +31,7 @@
             <label for='category'>
                 <i class='fas fa-table'></i>
             </label>
-            <select wire:model.lazy="subcategory" placeholder='Subcategory' style="margin-top:0%; margin-left: 20px"
-                required>
+            <select wire:model.lazy="subcategory" placeholder='Subcategory' style="margin-top:0%; margin-left: 20px">
                 <option value=''>Subcategory</option>
                 @if($options != NULL)
                 @foreach ($options as $option)

@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Components;
 
 use Livewire\Component;
 use Illuminate\Support\Facades\Hash;
+use App\Models\User;
 
 class EditProfile extends Component
 {
@@ -19,9 +20,15 @@ class EditProfile extends Component
 
     public $error = null;
 
+    protected $rules = [
+        'name' => 'required| unique:users,name',
+        'username' => 'required|unique:users,username',
+        'email' => 'required|unique:users,email'
+    ];
     public function submit()
     {
         $this->error = NULL;
+        $this->validate();
 
         $this->user->name = $this->name;
         $this->user->username = $this->username;

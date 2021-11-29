@@ -13,6 +13,8 @@ use App\Http\Livewire\Dashboard\DashboardPage;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Livewire\Components\ViewRegistered;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Livewire\Resupply\ResupplyPage;
+use App\Http\Livewire\Resupply\ResupplyCheckPage;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,16 +39,19 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/Registered', ViewRegistered::class)->name('Registered');
     Route::post('/registerEmployee', [RegisterController::class, 'registerEmployee'])->name('RegisterEmployee');
+    
+    Route::get('/Resupply', ResupplyPage::class)->name('Resupply');
+    Route::get('/Resupply/{stock}', ResupplyCheckPage::class)->name('Resupplying.resupply');
 });
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/Resupply', [ResupplyController::class, 'index'])->name('Resupply');
-    Route::get('/Resupply/wood', [ResupplyController::class, 'wood'])->name('Resupply/wood');
-    Route::get('/Resupply/plastic', [ResupplyController::class, 'plastic'])->name('Resupply/plastic');
-    Route::get('/Resupply/concrete', [ResupplyController::class, 'concrete'])->name('Resupply/concrete');
-    Route::get('/Resupply/metal', [ResupplyController::class, 'metal'])->name('Resupply/metal');
-    Route::get('/Resupply/others', [ResupplyController::class, 'others'])->name('Resupply/others');
-});
+// Route::middleware(['auth'])->group(function () {
+//     Route::get('/Resupply', [ResupplyController::class, 'index'])->name('Resupply');
+//     Route::get('/Resupply/wood', [ResupplyController::class, 'wood'])->name('Resupply/wood');
+//     Route::get('/Resupply/plastic', [ResupplyController::class, 'plastic'])->name('Resupply/plastic');
+//     Route::get('/Resupply/concrete', [ResupplyController::class, 'concrete'])->name('Resupply/concrete');
+//     Route::get('/Resupply/metal', [ResupplyController::class, 'metal'])->name('Resupply/metal');
+//     Route::get('/Resupply/others', [ResupplyController::class, 'others'])->name('Resupply/others');
+// });
 
 Route::get('/login', function () {
     return view('Base/index-login', ['login' => true]);

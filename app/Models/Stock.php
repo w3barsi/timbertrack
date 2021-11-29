@@ -11,7 +11,7 @@ class Stock extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'product', 'description', 'category', 'subcategory', 'available', 'price'
+        'product', 'description', 'category', 'subcategory', 'available', 'price', 'image'
     ];
 
     public function purchases()

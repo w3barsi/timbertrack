@@ -20,6 +20,7 @@ class CreateStocksTable extends Migration
             $table->text('description')->nullable();
             $table->enum('category', ['wood', 'plastic', 'metal', 'concrete', 'paint']);
             $table->string('subcategory')->nullable();
+            $table->string('image')->nullable();
             $table->integer('available');
             $table->integer('price');
             $table->timestamps();

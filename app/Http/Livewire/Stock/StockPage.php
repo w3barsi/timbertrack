@@ -23,6 +23,7 @@ class StockPage extends Component
     {
         $stock = Stock::find($id);
         $stock->delete();
+        return redirect(route('Stocks'));
     }
 
     public function displayHistoryChange()

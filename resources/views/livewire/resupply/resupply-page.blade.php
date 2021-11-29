@@ -8,13 +8,14 @@
     </form>
 
     <div id="container3" class="moveout">
-        <table id="table-stock">
+        <table id="table-resupply">
             <thead>
                 <tr>
                     <th style="width:35%">Product</th>
                     <th style="width:15%">Available</th>
                     <th style="width:15%">Accept</th>
                     <th style="width:25%">Reject</th>
+                    <th style="width:25%">Resupply!</th>
                     @if(auth()->user()->hasposition('admin') || auth()->user()->hasposition('checker'))
                     <th></th>
                     @endif
@@ -24,34 +25,32 @@
             <tbody>
                 <tr>
                     <td>
-                        <div onclick="location.href='{{route('Stocks.stock', $stock)}}'" style="cursor: pointer;">
-                            <center><a style="color:black; text-decoration:none"> {{ $stock->product }} </a></center>
+                        <div>
+                            <center><a style="color:black; text-decoration:none">{{ $stock->product }}</a></center>
                         </div>
                     </td>
-                    <td>
-                        <div onclick="location.href='{{route('Stocks.stock', $stock)}}'" style="cursor: pointer;">
+                    <td class>
+                        <div>
                             <center>{{ $stock->available }}</center>
                         </div>
                     </td>
                     <td>
-                        <div onclick="location.href='{{route('Stocks.stock', $stock)}}'" style="cursor: pointer;">
-                            <!-- <center>{{ $stock->price }}</center> -->
-                            {{0}}
+                        <div>
+                            <center>{{ $acceptArray[$i++] }}</center>
                         </div>
 
                     </td>
-                    <td>
-                        <div onclick="location.href='{{route('Stocks.stock', $stock)}}'" style="cursor: pointer;">
-                            <!-- <center>{{ $stock->subcategory }}</center> -->
-                            {{0}}
+                    <td class>
+                        <div>
+                            <center>{{ $rejectArray[$j++] }}</center>
                         </div>
                     </td>
                     @if(auth()->user()->hasPosition('admin') || auth()->user()->hasPosition('checker') )
                     <td>
-                        <input wire:click="delete({{$stock->id}})" type="submit" name="delete" value=""
-                            id="submit-icon2">
-                        <i class="fas fa-pen" style="margin-left:-23px; margin-top:5px; "> </i>
-
+                        <div onclick="location.href='{{route('Resupplying.resupply', $stock)}}'" style="cursor: pointer;">
+                        <i class="fas fa-pen" style="margin-left:-23px; margin-top:5px; "></i>
+                            <!-- <center>{{ $stock->subcategory }}</center> -->
+                        </div>
                     </td>
                     @endif
                 </tr>
@@ -61,8 +60,6 @@
 
         </table>
     </div>
-
-
 
     <div id="categories" class="fade-in1">
         <a class="@if($this->selected === 'all') selected @endif hover-shadow hover-color cursor-pointer"
@@ -84,56 +81,18 @@
         <a class="@if($selected === 'others') selected @endif hover-shadow hover-color cursor-pointer"
             wire:click="selected('others')"><span>O</span><span>t</span><span>h</span><span>e</span><span>r</span><span>s</span>
         </a>
-        <livewire:stock.components.stock-create />
+
     </div>
-
-    <!-- @if(auth()->user()->hasPosition('Admin'))
-    <button class="fancy ">
-        <span class="top-key"></span>
-        <a onclick="HideShowAdd()" class="">Create</a>
-        <span class="bottom-key-1"></span>
-        <span class="bottom-key-2"></span>
-    </button>
-    @endif -->
-
-    <!-- <button class="fancy" style="@if(auth()->user()->hasposition('admin') || auth()->user()->hasposition('checker')) margin-left:-23% @else margin-left:77% @endif ; position: absolute;">
-        <span class="top-key"></span>
-        <a wire:click="displayHistoryChange()" onclick="HideShowHistory()" class="">History</a>
-        <span class="bottom-key-1"></span>
-        <span class="bottom-key-2"></span>
-    </button> -->
-
-    <!-- <div id='history' @if($displayHistory===true)style="display: block;" @else style="display: none;" @endif>
-        <div class='log-history'>
-            <span wire:click="displayHistoryChange()" class='exit'>&times;</span>
-            <h1>HISTORY</h1>
-            <table style="width: 90%; margin-left:4%">
-                <tr>
-                    <th style="width:25%">User</th>
-                    <th style="width:25%">Product</th>
-                    <th style="width:25%">Timestamp</th>
-                    <th style="width:25%">Intention</th>
-                </tr>
-                @foreach ($history as $row)
-                <tr>
-                    <td>{{ $row->user->name }}</td>
-                    <td>{{ $row->product }}</td>
-                    <td>{{ $row->created_at }}</td>
-                    <td>{{ $row->status }}</td>
-                </tr>
-                @endforeach
-
-                {{$history->links('pagination-links')}}
-                <br>
-            </table>
-        </div>
-    </div> -->
 
 </div>
 
 @section('script')
 <script>
-    function HideShowAdd() {
+
+    function HideShowAdd(id) {
+        console.log(id);
+        var ez = id;
+        console.log("hello");
         var x = document.getElementById("back");
         if (x.style.display === "none") {
             x.style.display = "block";
@@ -153,14 +112,14 @@
             }
         }
 
-    function HideShowHistory() {
-        var x = document.getElementById("history");
-        if (x.style.display === "none") {
-            x.style.display = "block";
-        } else {
-            x.style.display = "none";
-        }
-    }
+    // function HideShowHistory() {
+    //     var x = document.getElementById("history");
+    //     if (x.style.display === "none") {
+    //         x.style.display = "block";
+    //     } else {
+    //         x.style.display = "none";
+    //     }
+    // }
         var modal1 = document.getElementById('history');
         var exit = document.getElementsByClassName("exit")[0];
         exit.onclick = function() {

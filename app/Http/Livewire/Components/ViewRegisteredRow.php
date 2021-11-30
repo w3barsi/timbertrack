@@ -12,32 +12,34 @@ class ViewRegisteredRow extends Component
     public $username;
     public $position;
     public $status;
-
-
-
+    
     public function updatedUsername()
     {
         $this->user->username = $this->username;
         $this->user->save();
+        return redirect()->route('Registered');
     }
 
     public function updatedStatus()
     {
         $this->user->status = $this->status;
         $this->user->save();
+        return redirect()->route('Registered');
     }
 
     public function updatedName()
     {
-
         $this->user->name = $this->name;
         $this->user->save();
+        return redirect()->route('Registered');
+
     }
 
     public function updatedPosition()
     {
         $this->user->position = $this->position;
         $this->user->save();
+        return redirect()->route('Registered');
     }
 
 

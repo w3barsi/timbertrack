@@ -14,7 +14,7 @@ class AddPositionToUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->enum('position', ['Admin', 'Cashier', 'Checker', 'Employee'])->nullable();
+            $table->enum('position', ['Admin', 'Supplier', 'Employee'])->nullable();
         });
     }
 

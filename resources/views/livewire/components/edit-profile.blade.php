@@ -9,11 +9,11 @@
                 <form wire:submit.prevent="submit">
 
                     <img src="{{ asset('img/img_avatar.png') }}" id="img21" alt="Avatar"><br>
-                    <input type="file" name="file" id="imgInp"
+                    <!-- <input type="file" name="file" id="imgInp"
                         style="display:none; cursor:pointer; position:absolute; z-index:20; margin-top:6%; margin-left: -5%; " />
                     <label for="imgInp"> <i
                             style="width:29%; font-style: normal;  position:absolute; margin-top:5%; margin-left:-15%; background-color: #006666;"
-                            class="button button4">Upload new photo </i> </label>
+                            class="button button4">Upload new photo </i> </label> -->
             </center>
         </div>
         <div class="column middle" style="background-color:#F5F5F5">

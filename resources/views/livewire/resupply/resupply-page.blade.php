@@ -45,7 +45,7 @@
                             <center>{{ $rejectArray[$j++] }}</center>
                         </div>
                     </td>
-                    @if(auth()->user()->hasPosition('admin') || auth()->user()->hasPosition('checker') )
+                    @if(auth()->user()->hasPosition('admin') || auth()->user()->hasPosition('supplier') )
                     <td>
                         <div onclick="location.href='{{route('Resupplying.resupply', $stock)}}'" style="cursor: pointer;">
                         <input wire:click="" type="submit" name="delete" value="" id="submit-icon2">

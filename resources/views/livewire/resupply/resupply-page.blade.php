@@ -16,7 +16,7 @@
                     <th style="width:15%">Accept</th>
                     <th style="width:25%">Reject</th>
                     <th style="width:25%">Resupply!</th>
-                    @if(auth()->user()->hasposition('admin') || auth()->user()->hasposition('checker'))
+                    @if(auth()->user()->hasposition('admin') || auth()->user()->hasposition('supplier'))
                     <th></th>
                     @endif
                 </tr>

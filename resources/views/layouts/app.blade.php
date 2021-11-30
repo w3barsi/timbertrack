@@ -117,12 +117,13 @@
             <a href="{{ url('/Dashboard') }}"
                 style="font-size: 30px; color:white; margin-left:4%; text-decoration:none"> DASHBOARD </a>
         </div>
-
+        @if(auth()->user()->hasPosition('admin')||auth()->user()->hasPosition('supplier'))
         <div id="resupply">
             <i class="fa fa-cubes" style="color:white; font-size: 30px; margin-top:5%; margin-left:5%;"></i>
             <a href="{{ url('/Resupply') }}" style="font-size: 30px; color:white; margin-left:4%; text-decoration:none">
             RESUPPLY </a>
         </div>
+        @endif
     </div>
     <div id="registerback" style="display:none">
         <div class="register">

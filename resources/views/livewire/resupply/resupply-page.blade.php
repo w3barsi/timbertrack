@@ -48,6 +48,7 @@
                     @if(auth()->user()->hasPosition('admin') || auth()->user()->hasPosition('checker') )
                     <td>
                         <div onclick="location.href='{{route('Resupplying.resupply', $stock)}}'" style="cursor: pointer;">
+                        <input wire:click="" type="submit" name="delete" value="" id="submit-icon2">
                         <i class="fas fa-pen" style="margin-left:-23px; margin-top:5px; "></i>
                             <!-- <center>{{ $stock->subcategory }}</center> -->
                         </div>

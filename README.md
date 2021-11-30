@@ -17,8 +17,8 @@ php artisan migrate
 git clone https://github.com/barsi-dev/timbertrack
 composer install
 composer require livewire/livewire
-php artisan key:generate
 php artisan storage:link
+php artisan key:generate
 php artisan migrate
 php artisan serve
 

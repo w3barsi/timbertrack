@@ -133,9 +133,11 @@
                 <select name="position" style="margin-left: 11%">
                     <option hidden selected disabled> Choose a position </option>
                     <option style="font-size: 15px" value="admin"> Admin </option>
-                    <option style="font-size: 15px" value="cashier"> Cashier </option>
-                    <option style="font-size: 15px" value="checker"> Checker </option>
+                    <!-- <option style="font-size: 15px" value="cashier"> Cashier </option>
+                    <option style="font-size: 15px" value="checker"> Checker </option> -->
+                    <!-- <option style="font-size: 15px" value="admin"> Admin </option> -->
                     <option style="font-size: 15px" value="employee"> Employee </option>
+                    <option style="font-size: 15px" value="supplier"> Supplier </option>
                 </select>
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
                 &nbsp;&nbsp;

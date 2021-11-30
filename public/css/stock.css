@@ -6,11 +6,13 @@
     position: absolute;
     background-color: rgba(255, 255, 255, 0.34);
     color: black;
-    height: auto;
+    /* height: auto; */
+    height:500px;
     width: 90%;
     margin-top: 10%;
     margin-left: 5%;
     text-align: center;
+    overflow-y:auto;
 }
 /*search*/
 .search__input {
@@ -123,6 +125,10 @@ a :hover span:nth-child(1) {
 a.hover-shadow:hover {
     text-shadow: 1px 1px 0px gray, 2px 2px 0px gray, 3px 3px 0px gray;
 }
+
+a.hover-color:hover {
+    border-color: darkmagenta;
+  }
 
 /*button */
 

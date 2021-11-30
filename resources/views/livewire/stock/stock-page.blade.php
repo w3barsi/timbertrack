@@ -94,13 +94,15 @@
     </button>
     @endif
 
+    @if(auth()->user()->hasPosition('Admin'))
+
     <button class="fancy" style="@if(auth()->user()->hasposition('admin') || auth()->user()->hasposition('checker')) margin-left:-23% @else margin-left:77% @endif ; position: absolute;">
         <span class="top-key"></span>
         <a wire:click="displayHistoryChange()" onclick="HideShowHistory()" class="">History</a>
         <span class="bottom-key-1"></span>
         <span class="bottom-key-2"></span>
     </button>
-
+    @endif
     <div id='history' @if($displayHistory===true)style="display: block;" @else style="display: none;" @endif>
         <div class='log-history'>
             <span wire:click="displayHistoryChange()" class='exit'>&times;</span>
